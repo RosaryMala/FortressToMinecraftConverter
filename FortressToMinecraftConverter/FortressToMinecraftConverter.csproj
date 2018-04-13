@@ -69,6 +69,7 @@
     <Compile Include="protos.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\Basic.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\BasicApi.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\ColorOstreamProxy.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\ColorValue.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\CommandResult.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\ConsoleDFStream.cs" />
