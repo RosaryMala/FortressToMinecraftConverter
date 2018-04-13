@@ -1,0 +1,3 @@
+[submodule "FortressToMinecraftConverter/RemoteClientDF-net"]
+	path = FortressToMinecraftConverter/RemoteClientDF-net
+	url = https://github.com/JapaMala/RemoteClientDF-Net.git

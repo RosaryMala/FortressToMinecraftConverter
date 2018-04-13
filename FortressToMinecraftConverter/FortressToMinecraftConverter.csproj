@@ -34,8 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="protobuf-net, Version=2.3.7.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.3.7\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="Substrate, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Substrate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +64,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MapReader.cs" />
+    <Compile Include="RemoteClientDF\AnnouncementType.cs" />
+    <Compile Include="RemoteClientDF\Basic.cs" />
+    <Compile Include="RemoteClientDF\BasicApi.cs" />
+    <Compile Include="RemoteClientDF\ColorText.cs" />
+    <Compile Include="RemoteClientDF\CoreProtocol.cs" />
+    <Compile Include="RemoteClientDF\DFStringStream.cs" />
+    <Compile Include="RemoteClientDF\Enums.cs" />
+    <Compile Include="RemoteClientDF\IDFStream.cs" />
+    <Compile Include="RemoteClientDF\ItemFlags.cs" />
+    <Compile Include="RemoteClientDF\protos.cs" />
+    <Compile Include="RemoteClientDF\RemoteClient.cs" />
+    <Compile Include="RemoteClientDF\SDLKeycodes.cs" />
+    <Compile Include="RemoteClientDF\TileRenderer.cs" />
+    <Compile Include="RemoteClientDF\Tools.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,13 +110,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="RemoteClientDF\AdventureControl.proto" />
+    <None Include="RemoteClientDF\ItemdefInstrument.proto" />
+    <None Include="RemoteClientDF\RemoteFortressReader.proto" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\Substrate.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
