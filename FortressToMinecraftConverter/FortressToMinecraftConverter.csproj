@@ -64,21 +64,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ColorConsoleStream.cs" />
     <Compile Include="MapReader.cs" />
-    <Compile Include="RemoteClientDF\AnnouncementType.cs" />
-    <Compile Include="RemoteClientDF\Basic.cs" />
-    <Compile Include="RemoteClientDF\BasicApi.cs" />
-    <Compile Include="RemoteClientDF\ColorText.cs" />
-    <Compile Include="RemoteClientDF\CoreProtocol.cs" />
-    <Compile Include="RemoteClientDF\DFStringStream.cs" />
-    <Compile Include="RemoteClientDF\Enums.cs" />
-    <Compile Include="RemoteClientDF\IDFStream.cs" />
-    <Compile Include="RemoteClientDF\ItemFlags.cs" />
-    <Compile Include="RemoteClientDF\protos.cs" />
-    <Compile Include="RemoteClientDF\RemoteClient.cs" />
-    <Compile Include="RemoteClientDF\SDLKeycodes.cs" />
-    <Compile Include="RemoteClientDF\TileRenderer.cs" />
-    <Compile Include="RemoteClientDF\Tools.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\Basic.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\BasicApi.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\ColorValue.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\CommandResult.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\ConsoleDFStream.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\CoreProtocol.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\DfCoord.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\DfCoord2d.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\DfHackReplyCode.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\DfStringStream.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\Enums.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\IDFStream.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RemoteClient.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RemoteFunction.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RemoteFunctionBase.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RemoteSuspender.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RpcFunctionBase.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RpcHandshakeHeader.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\RpcMessageHeader.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\SDLKeycodes.cs" />
+    <Compile Include="RemoteClientDF-net\DFHack\Tools.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -115,9 +123,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="RemoteClientDF\AdventureControl.proto" />
-    <None Include="RemoteClientDF\ItemdefInstrument.proto" />
-    <None Include="RemoteClientDF\RemoteFortressReader.proto" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
