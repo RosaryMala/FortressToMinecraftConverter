@@ -16,7 +16,7 @@ namespace RemoteFortressReader
   {
     public Coord() {}
     
-    [UnityEngine.SerializeField]
+
     private int _x = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -25,7 +25,7 @@ namespace RemoteFortressReader
       get { return _x; }
       set { _x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _y = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -34,7 +34,7 @@ namespace RemoteFortressReader
       get { return _y; }
       set { _y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _z = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -53,7 +53,7 @@ namespace RemoteFortressReader
   {
     public Tiletype() {}
     
-    [UnityEngine.SerializeField]
+
     private int _id;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int id
@@ -61,7 +61,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -70,7 +70,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _caption = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"caption", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -79,7 +79,7 @@ namespace RemoteFortressReader
       get { return _caption; }
       set { _caption = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.TiletypeShape _shape = RemoteFortressReader.TiletypeShape.NO_SHAPE;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"shape", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.TiletypeShape.NO_SHAPE)]
@@ -88,7 +88,7 @@ namespace RemoteFortressReader
       get { return _shape; }
       set { _shape = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.TiletypeSpecial _special = RemoteFortressReader.TiletypeSpecial.NO_SPECIAL;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"special", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.TiletypeSpecial.NO_SPECIAL)]
@@ -97,7 +97,7 @@ namespace RemoteFortressReader
       get { return _special; }
       set { _special = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.TiletypeMaterial _material = RemoteFortressReader.TiletypeMaterial.NO_MATERIAL;
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.TiletypeMaterial.NO_MATERIAL)]
@@ -106,7 +106,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.TiletypeVariant _variant = RemoteFortressReader.TiletypeVariant.NO_VARIANT;
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"variant", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.TiletypeVariant.NO_VARIANT)]
@@ -115,7 +115,7 @@ namespace RemoteFortressReader
       get { return _variant; }
       set { _variant = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _direction = "";
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"direction", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -134,7 +134,7 @@ namespace RemoteFortressReader
   {
     public TiletypeList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Tiletype> _tiletype_list = new global::System.Collections.Generic.List<RemoteFortressReader.Tiletype>();
     [global::ProtoBuf.ProtoMember(1, Name=@"tiletype_list", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Tiletype> tiletype_list
@@ -152,7 +152,7 @@ namespace RemoteFortressReader
   {
     public BuildingExtents() {}
     
-    [UnityEngine.SerializeField]
+
     private int _pos_x;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int pos_x
@@ -160,7 +160,7 @@ namespace RemoteFortressReader
       get { return _pos_x; }
       set { _pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_y;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int pos_y
@@ -168,7 +168,7 @@ namespace RemoteFortressReader
       get { return _pos_y; }
       set { _pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _width;
     [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"width", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int width
@@ -176,7 +176,7 @@ namespace RemoteFortressReader
       get { return _width; }
       set { _width = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _height;
     [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"height", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int height
@@ -184,7 +184,7 @@ namespace RemoteFortressReader
       get { return _height; }
       set { _height = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _extents = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(5, Name=@"extents", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> extents
@@ -202,7 +202,7 @@ namespace RemoteFortressReader
   {
     public BuildingItem() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Item _item = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"item", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -211,7 +211,7 @@ namespace RemoteFortressReader
       get { return _item; }
       set { _item = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _mode = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"mode", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -230,7 +230,7 @@ namespace RemoteFortressReader
   {
     public BuildingInstance() {}
     
-    [UnityEngine.SerializeField]
+
     private int _index;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int index
@@ -238,7 +238,7 @@ namespace RemoteFortressReader
       get { return _index; }
       set { _index = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_x_min = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"pos_x_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -247,7 +247,7 @@ namespace RemoteFortressReader
       get { return _pos_x_min; }
       set { _pos_x_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_y_min = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"pos_y_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -256,7 +256,7 @@ namespace RemoteFortressReader
       get { return _pos_y_min; }
       set { _pos_y_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_z_min = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"pos_z_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -265,7 +265,7 @@ namespace RemoteFortressReader
       get { return _pos_z_min; }
       set { _pos_z_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_x_max = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"pos_x_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -274,7 +274,7 @@ namespace RemoteFortressReader
       get { return _pos_x_max; }
       set { _pos_x_max = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_y_max = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"pos_y_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -283,7 +283,7 @@ namespace RemoteFortressReader
       get { return _pos_y_max; }
       set { _pos_y_max = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_z_max = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"pos_z_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -292,7 +292,7 @@ namespace RemoteFortressReader
       get { return _pos_z_max; }
       set { _pos_z_max = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.BuildingType _building_type = null;
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"building_type", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -301,7 +301,7 @@ namespace RemoteFortressReader
       get { return _building_type; }
       set { _building_type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -310,7 +310,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _building_flags = default(uint);
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"building_flags", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -319,7 +319,7 @@ namespace RemoteFortressReader
       get { return _building_flags; }
       set { _building_flags = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _is_room = default(bool);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"is_room", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -328,7 +328,7 @@ namespace RemoteFortressReader
       get { return _is_room; }
       set { _is_room = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.BuildingExtents _room = null;
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"room", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -337,7 +337,7 @@ namespace RemoteFortressReader
       get { return _room; }
       set { _room = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.BuildingDirection _direction = RemoteFortressReader.BuildingDirection.NORTH;
     [global::ProtoBuf.ProtoMember(13, IsRequired = false, Name=@"direction", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.BuildingDirection.NORTH)]
@@ -346,7 +346,7 @@ namespace RemoteFortressReader
       get { return _direction; }
       set { _direction = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BuildingItem> _items = new global::System.Collections.Generic.List<RemoteFortressReader.BuildingItem>();
     [global::ProtoBuf.ProtoMember(14, Name=@"items", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BuildingItem> items
@@ -354,7 +354,7 @@ namespace RemoteFortressReader
       get { return _items; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _active = default(int);
     [global::ProtoBuf.ProtoMember(15, IsRequired = false, Name=@"active", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -373,7 +373,7 @@ namespace RemoteFortressReader
   {
     public RiverEdge() {}
     
-    [UnityEngine.SerializeField]
+
     private int _min_pos = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"min_pos", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -382,7 +382,7 @@ namespace RemoteFortressReader
       get { return _min_pos; }
       set { _min_pos = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _max_pos = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"max_pos", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -391,7 +391,7 @@ namespace RemoteFortressReader
       get { return _max_pos; }
       set { _max_pos = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _active = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"active", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -400,7 +400,7 @@ namespace RemoteFortressReader
       get { return _active; }
       set { _active = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _elevation = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"elevation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -419,7 +419,7 @@ namespace RemoteFortressReader
   {
     public RiverTile() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.RiverEdge _north = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"north", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -428,7 +428,7 @@ namespace RemoteFortressReader
       get { return _north; }
       set { _north = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.RiverEdge _south = null;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"south", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -437,7 +437,7 @@ namespace RemoteFortressReader
       get { return _south; }
       set { _south = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.RiverEdge _east = null;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"east", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -446,7 +446,7 @@ namespace RemoteFortressReader
       get { return _east; }
       set { _east = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.RiverEdge _west = null;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"west", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -465,7 +465,7 @@ namespace RemoteFortressReader
   {
     public Spatter() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -474,7 +474,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _amount = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"amount", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -483,7 +483,7 @@ namespace RemoteFortressReader
       get { return _amount; }
       set { _amount = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatterState _state = RemoteFortressReader.MatterState.Solid;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"state", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.MatterState.Solid)]
@@ -492,7 +492,7 @@ namespace RemoteFortressReader
       get { return _state; }
       set { _state = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _item = null;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"item", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -511,7 +511,7 @@ namespace RemoteFortressReader
   {
     public SpatterPile() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Spatter> _spatters = new global::System.Collections.Generic.List<RemoteFortressReader.Spatter>();
     [global::ProtoBuf.ProtoMember(1, Name=@"spatters", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Spatter> spatters
@@ -529,7 +529,7 @@ namespace RemoteFortressReader
   {
     public Item() {}
     
-    [UnityEngine.SerializeField]
+
     private int _id = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -538,7 +538,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _pos = null;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"pos", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -547,7 +547,7 @@ namespace RemoteFortressReader
       get { return _pos; }
       set { _pos = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _flags1 = default(uint);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"flags1", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -556,7 +556,7 @@ namespace RemoteFortressReader
       get { return _flags1; }
       set { _flags1 = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _flags2 = default(uint);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"flags2", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -565,7 +565,7 @@ namespace RemoteFortressReader
       get { return _flags2; }
       set { _flags2 = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _type = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -574,7 +574,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -583,7 +583,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ColorDefinition _dye = null;
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"dye", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -592,7 +592,7 @@ namespace RemoteFortressReader
       get { return _dye; }
       set { _dye = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _stack_size = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"stack_size", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -601,7 +601,7 @@ namespace RemoteFortressReader
       get { return _stack_size; }
       set { _stack_size = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _subpos_x = default(float);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"subpos_x", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -610,7 +610,7 @@ namespace RemoteFortressReader
       get { return _subpos_x; }
       set { _subpos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _subpos_y = default(float);
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"subpos_y", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -619,7 +619,7 @@ namespace RemoteFortressReader
       get { return _subpos_y; }
       set { _subpos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _subpos_z = default(float);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"subpos_z", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -628,7 +628,7 @@ namespace RemoteFortressReader
       get { return _subpos_z; }
       set { _subpos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _projectile = default(bool);
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"projectile", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -637,7 +637,7 @@ namespace RemoteFortressReader
       get { return _projectile; }
       set { _projectile = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _velocity_x = default(float);
     [global::ProtoBuf.ProtoMember(13, IsRequired = false, Name=@"velocity_x", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -646,7 +646,7 @@ namespace RemoteFortressReader
       get { return _velocity_x; }
       set { _velocity_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _velocity_y = default(float);
     [global::ProtoBuf.ProtoMember(14, IsRequired = false, Name=@"velocity_y", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -655,7 +655,7 @@ namespace RemoteFortressReader
       get { return _velocity_y; }
       set { _velocity_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _velocity_z = default(float);
     [global::ProtoBuf.ProtoMember(15, IsRequired = false, Name=@"velocity_z", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -664,7 +664,7 @@ namespace RemoteFortressReader
       get { return _velocity_z; }
       set { _velocity_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _volume = default(int);
     [global::ProtoBuf.ProtoMember(16, IsRequired = false, Name=@"volume", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -673,7 +673,7 @@ namespace RemoteFortressReader
       get { return _volume; }
       set { _volume = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ItemImprovement> _improvements = new global::System.Collections.Generic.List<RemoteFortressReader.ItemImprovement>();
     [global::ProtoBuf.ProtoMember(17, Name=@"improvements", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ItemImprovement> improvements
@@ -681,7 +681,7 @@ namespace RemoteFortressReader
       get { return _improvements; }
     }
   
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ArtImage _image = null;
     [global::ProtoBuf.ProtoMember(18, IsRequired = false, Name=@"image", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -700,7 +700,7 @@ namespace RemoteFortressReader
   {
     public MapBlock() {}
     
-    [UnityEngine.SerializeField]
+
     private int _map_x;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"map_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int map_x
@@ -708,7 +708,7 @@ namespace RemoteFortressReader
       get { return _map_x; }
       set { _map_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _map_y;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"map_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int map_y
@@ -716,7 +716,7 @@ namespace RemoteFortressReader
       get { return _map_y; }
       set { _map_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _map_z;
     [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"map_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int map_z
@@ -724,7 +724,7 @@ namespace RemoteFortressReader
       get { return _map_z; }
       set { _map_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _tiles = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(4, Name=@"tiles", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> tiles
@@ -732,7 +732,7 @@ namespace RemoteFortressReader
       get { return _tiles; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(5, Name=@"materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> materials
@@ -740,7 +740,7 @@ namespace RemoteFortressReader
       get { return _materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _layer_materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(6, Name=@"layer_materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> layer_materials
@@ -748,7 +748,7 @@ namespace RemoteFortressReader
       get { return _layer_materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _vein_materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(7, Name=@"vein_materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> vein_materials
@@ -756,7 +756,7 @@ namespace RemoteFortressReader
       get { return _vein_materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _base_materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(8, Name=@"base_materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> base_materials
@@ -764,7 +764,7 @@ namespace RemoteFortressReader
       get { return _base_materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _magma = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(9, Name=@"magma", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> magma
@@ -772,7 +772,7 @@ namespace RemoteFortressReader
       get { return _magma; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _water = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(10, Name=@"water", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> water
@@ -780,7 +780,7 @@ namespace RemoteFortressReader
       get { return _water; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _hidden = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(11, Name=@"hidden", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> hidden
@@ -788,7 +788,7 @@ namespace RemoteFortressReader
       get { return _hidden; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _light = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(12, Name=@"light", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> light
@@ -796,7 +796,7 @@ namespace RemoteFortressReader
       get { return _light; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _subterranean = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(13, Name=@"subterranean", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> subterranean
@@ -804,7 +804,7 @@ namespace RemoteFortressReader
       get { return _subterranean; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _outside = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(14, Name=@"outside", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> outside
@@ -812,7 +812,7 @@ namespace RemoteFortressReader
       get { return _outside; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _aquifer = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(15, Name=@"aquifer", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> aquifer
@@ -820,7 +820,7 @@ namespace RemoteFortressReader
       get { return _aquifer; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _water_stagnant = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(16, Name=@"water_stagnant", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> water_stagnant
@@ -828,7 +828,7 @@ namespace RemoteFortressReader
       get { return _water_stagnant; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _water_salt = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(17, Name=@"water_salt", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> water_salt
@@ -836,7 +836,7 @@ namespace RemoteFortressReader
       get { return _water_salt; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _construction_items = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(18, Name=@"construction_items", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> construction_items
@@ -844,7 +844,7 @@ namespace RemoteFortressReader
       get { return _construction_items; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BuildingInstance> _buildings = new global::System.Collections.Generic.List<RemoteFortressReader.BuildingInstance>();
     [global::ProtoBuf.ProtoMember(19, Name=@"buildings", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BuildingInstance> buildings
@@ -852,7 +852,7 @@ namespace RemoteFortressReader
       get { return _buildings; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _tree_percent = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(20, Name=@"tree_percent", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> tree_percent
@@ -860,7 +860,7 @@ namespace RemoteFortressReader
       get { return _tree_percent; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _tree_x = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(21, Name=@"tree_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> tree_x
@@ -868,7 +868,7 @@ namespace RemoteFortressReader
       get { return _tree_x; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _tree_y = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(22, Name=@"tree_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> tree_y
@@ -876,7 +876,7 @@ namespace RemoteFortressReader
       get { return _tree_y; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _tree_z = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(23, Name=@"tree_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> tree_z
@@ -884,7 +884,7 @@ namespace RemoteFortressReader
       get { return _tree_z; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.TileDigDesignation> _tile_dig_designation = new global::System.Collections.Generic.List<RemoteFortressReader.TileDigDesignation>();
     [global::ProtoBuf.ProtoMember(24, Name=@"tile_dig_designation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<RemoteFortressReader.TileDigDesignation> tile_dig_designation
@@ -892,7 +892,7 @@ namespace RemoteFortressReader
       get { return _tile_dig_designation; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.SpatterPile> _spatterPile = new global::System.Collections.Generic.List<RemoteFortressReader.SpatterPile>();
     [global::ProtoBuf.ProtoMember(25, Name=@"spatterPile", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.SpatterPile> spatterPile
@@ -900,7 +900,7 @@ namespace RemoteFortressReader
       get { return _spatterPile; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Item> _items = new global::System.Collections.Generic.List<RemoteFortressReader.Item>();
     [global::ProtoBuf.ProtoMember(26, Name=@"items", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Item> items
@@ -908,7 +908,7 @@ namespace RemoteFortressReader
       get { return _items; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _tile_dig_designation_marker = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(27, Name=@"tile_dig_designation_marker", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> tile_dig_designation_marker
@@ -916,7 +916,7 @@ namespace RemoteFortressReader
       get { return _tile_dig_designation_marker; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _tile_dig_designation_auto = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(28, Name=@"tile_dig_designation_auto", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> tile_dig_designation_auto
@@ -924,7 +924,7 @@ namespace RemoteFortressReader
       get { return _tile_dig_designation_auto; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _grass_percent = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(29, Name=@"grass_percent", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> grass_percent
@@ -932,7 +932,7 @@ namespace RemoteFortressReader
       get { return _grass_percent; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.FlowInfo> _flows = new global::System.Collections.Generic.List<RemoteFortressReader.FlowInfo>();
     [global::ProtoBuf.ProtoMember(30, Name=@"flows", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.FlowInfo> flows
@@ -950,7 +950,7 @@ namespace RemoteFortressReader
   {
     public MatPair() {}
     
-    [UnityEngine.SerializeField]
+
     private int _mat_type;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"mat_type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int mat_type
@@ -958,7 +958,7 @@ namespace RemoteFortressReader
       get { return _mat_type; }
       set { _mat_type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _mat_index;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"mat_index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int mat_index
@@ -976,7 +976,7 @@ namespace RemoteFortressReader
   {
     public ColorDefinition() {}
     
-    [UnityEngine.SerializeField]
+
     private int _red;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"red", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int red
@@ -984,7 +984,7 @@ namespace RemoteFortressReader
       get { return _red; }
       set { _red = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _green;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"green", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int green
@@ -992,7 +992,7 @@ namespace RemoteFortressReader
       get { return _green; }
       set { _green = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _blue;
     [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"blue", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int blue
@@ -1010,7 +1010,7 @@ namespace RemoteFortressReader
   {
     public MaterialDefinition() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _mat_pair;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"mat_pair", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public RemoteFortressReader.MatPair mat_pair
@@ -1018,7 +1018,7 @@ namespace RemoteFortressReader
       get { return _mat_pair; }
       set { _mat_pair = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1027,7 +1027,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1036,7 +1036,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ColorDefinition _state_color = null;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"state_color", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1045,7 +1045,7 @@ namespace RemoteFortressReader
       get { return _state_color; }
       set { _state_color = value; }
     }
-    [UnityEngine.SerializeField]
+
     private ItemdefInstrument.InstrumentDef _instrument = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"instrument", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1064,7 +1064,7 @@ namespace RemoteFortressReader
   {
     public BuildingType() {}
     
-    [UnityEngine.SerializeField]
+
     private int _building_type;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"building_type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int building_type
@@ -1072,7 +1072,7 @@ namespace RemoteFortressReader
       get { return _building_type; }
       set { _building_type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _building_subtype;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"building_subtype", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int building_subtype
@@ -1080,7 +1080,7 @@ namespace RemoteFortressReader
       get { return _building_subtype; }
       set { _building_subtype = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _building_custom;
     [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"building_custom", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int building_custom
@@ -1098,7 +1098,7 @@ namespace RemoteFortressReader
   {
     public BuildingDefinition() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.BuildingType _building_type;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"building_type", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public RemoteFortressReader.BuildingType building_type
@@ -1106,7 +1106,7 @@ namespace RemoteFortressReader
       get { return _building_type; }
       set { _building_type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1115,7 +1115,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1134,7 +1134,7 @@ namespace RemoteFortressReader
   {
     public BuildingList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BuildingDefinition> _building_list = new global::System.Collections.Generic.List<RemoteFortressReader.BuildingDefinition>();
     [global::ProtoBuf.ProtoMember(1, Name=@"building_list", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BuildingDefinition> building_list
@@ -1152,7 +1152,7 @@ namespace RemoteFortressReader
   {
     public MaterialList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MaterialDefinition> _material_list = new global::System.Collections.Generic.List<RemoteFortressReader.MaterialDefinition>();
     [global::ProtoBuf.ProtoMember(1, Name=@"material_list", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MaterialDefinition> material_list
@@ -1170,7 +1170,7 @@ namespace RemoteFortressReader
   {
     public Hair() {}
     
-    [UnityEngine.SerializeField]
+
     private int _length = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"length", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1179,7 +1179,7 @@ namespace RemoteFortressReader
       get { return _length; }
       set { _length = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.HairStyle _style = RemoteFortressReader.HairStyle.UNKEMPT;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"style", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.HairStyle.UNKEMPT)]
@@ -1198,7 +1198,7 @@ namespace RemoteFortressReader
   {
     public BodySizeInfo() {}
     
-    [UnityEngine.SerializeField]
+
     private int _size_cur = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"size_cur", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1207,7 +1207,7 @@ namespace RemoteFortressReader
       get { return _size_cur; }
       set { _size_cur = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _size_base = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"size_base", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1216,7 +1216,7 @@ namespace RemoteFortressReader
       get { return _size_base; }
       set { _size_base = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _area_cur = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"area_cur", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1225,7 +1225,7 @@ namespace RemoteFortressReader
       get { return _area_cur; }
       set { _area_cur = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _area_base = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"area_base", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1234,7 +1234,7 @@ namespace RemoteFortressReader
       get { return _area_base; }
       set { _area_base = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _length_cur = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"length_cur", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1243,7 +1243,7 @@ namespace RemoteFortressReader
       get { return _length_cur; }
       set { _length_cur = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _length_base = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"length_base", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1262,7 +1262,7 @@ namespace RemoteFortressReader
   {
     public UnitAppearance() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _body_modifiers = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(1, Name=@"body_modifiers", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> body_modifiers
@@ -1270,7 +1270,7 @@ namespace RemoteFortressReader
       get { return _body_modifiers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _bp_modifiers = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(2, Name=@"bp_modifiers", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> bp_modifiers
@@ -1278,7 +1278,7 @@ namespace RemoteFortressReader
       get { return _bp_modifiers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _size_modifier = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"size_modifier", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1287,7 +1287,7 @@ namespace RemoteFortressReader
       get { return _size_modifier; }
       set { _size_modifier = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _colors = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(4, Name=@"colors", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> colors
@@ -1295,7 +1295,7 @@ namespace RemoteFortressReader
       get { return _colors; }
     }
   
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Hair _hair = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"hair", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1304,7 +1304,7 @@ namespace RemoteFortressReader
       get { return _hair; }
       set { _hair = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Hair _beard = null;
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"beard", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1313,7 +1313,7 @@ namespace RemoteFortressReader
       get { return _beard; }
       set { _beard = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Hair _moustache = null;
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"moustache", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1322,7 +1322,7 @@ namespace RemoteFortressReader
       get { return _moustache; }
       set { _moustache = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Hair _sideburns = null;
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"sideburns", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1341,7 +1341,7 @@ namespace RemoteFortressReader
   {
     public InventoryItem() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.InventoryMode _mode = RemoteFortressReader.InventoryMode.Hauled;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"mode", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.InventoryMode.Hauled)]
@@ -1350,7 +1350,7 @@ namespace RemoteFortressReader
       get { return _mode; }
       set { _mode = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Item _item = null;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"item", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1369,7 +1369,7 @@ namespace RemoteFortressReader
   {
     public UnitDefinition() {}
     
-    [UnityEngine.SerializeField]
+
     private int _id;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int id
@@ -1377,7 +1377,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _isValid = default(bool);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"isValid", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -1386,7 +1386,7 @@ namespace RemoteFortressReader
       get { return _isValid; }
       set { _isValid = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_x = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1395,7 +1395,7 @@ namespace RemoteFortressReader
       get { return _pos_x; }
       set { _pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_y = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1404,7 +1404,7 @@ namespace RemoteFortressReader
       get { return _pos_y; }
       set { _pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_z = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"pos_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1413,7 +1413,7 @@ namespace RemoteFortressReader
       get { return _pos_z; }
       set { _pos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _race = null;
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"race", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1422,7 +1422,7 @@ namespace RemoteFortressReader
       get { return _race; }
       set { _race = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ColorDefinition _profession_color = null;
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"profession_color", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1431,7 +1431,7 @@ namespace RemoteFortressReader
       get { return _profession_color; }
       set { _profession_color = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _flags1 = default(uint);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"flags1", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -1440,7 +1440,7 @@ namespace RemoteFortressReader
       get { return _flags1; }
       set { _flags1 = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _flags2 = default(uint);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"flags2", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -1449,7 +1449,7 @@ namespace RemoteFortressReader
       get { return _flags2; }
       set { _flags2 = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _flags3 = default(uint);
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"flags3", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -1458,7 +1458,7 @@ namespace RemoteFortressReader
       get { return _flags3; }
       set { _flags3 = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _is_soldier = default(bool);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"is_soldier", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -1467,7 +1467,7 @@ namespace RemoteFortressReader
       get { return _is_soldier; }
       set { _is_soldier = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.BodySizeInfo _size_info = null;
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"size_info", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1476,7 +1476,7 @@ namespace RemoteFortressReader
       get { return _size_info; }
       set { _size_info = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(13, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1485,7 +1485,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _blood_max = default(int);
     [global::ProtoBuf.ProtoMember(14, IsRequired = false, Name=@"blood_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1494,7 +1494,7 @@ namespace RemoteFortressReader
       get { return _blood_max; }
       set { _blood_max = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _blood_count = default(int);
     [global::ProtoBuf.ProtoMember(15, IsRequired = false, Name=@"blood_count", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1503,7 +1503,7 @@ namespace RemoteFortressReader
       get { return _blood_count; }
       set { _blood_count = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.UnitAppearance _appearance = null;
     [global::ProtoBuf.ProtoMember(16, IsRequired = false, Name=@"appearance", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -1512,7 +1512,7 @@ namespace RemoteFortressReader
       get { return _appearance; }
       set { _appearance = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _profession_id = default(int);
     [global::ProtoBuf.ProtoMember(17, IsRequired = false, Name=@"profession_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1521,7 +1521,7 @@ namespace RemoteFortressReader
       get { return _profession_id; }
       set { _profession_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _noble_positions = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(18, Name=@"noble_positions", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> noble_positions
@@ -1529,7 +1529,7 @@ namespace RemoteFortressReader
       get { return _noble_positions; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _rider_id = default(int);
     [global::ProtoBuf.ProtoMember(19, IsRequired = false, Name=@"rider_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1538,7 +1538,7 @@ namespace RemoteFortressReader
       get { return _rider_id; }
       set { _rider_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.InventoryItem> _inventory = new global::System.Collections.Generic.List<RemoteFortressReader.InventoryItem>();
     [global::ProtoBuf.ProtoMember(20, Name=@"inventory", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.InventoryItem> inventory
@@ -1546,7 +1546,7 @@ namespace RemoteFortressReader
       get { return _inventory; }
     }
   
-    [UnityEngine.SerializeField]
+
     private float _subpos_x = default(float);
     [global::ProtoBuf.ProtoMember(21, IsRequired = false, Name=@"subpos_x", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -1555,7 +1555,7 @@ namespace RemoteFortressReader
       get { return _subpos_x; }
       set { _subpos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _subpos_y = default(float);
     [global::ProtoBuf.ProtoMember(22, IsRequired = false, Name=@"subpos_y", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -1564,7 +1564,7 @@ namespace RemoteFortressReader
       get { return _subpos_y; }
       set { _subpos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private float _subpos_z = default(float);
     [global::ProtoBuf.ProtoMember(23, IsRequired = false, Name=@"subpos_z", DataFormat = global::ProtoBuf.DataFormat.FixedSize)]
     [global::System.ComponentModel.DefaultValue(default(float))]
@@ -1583,7 +1583,7 @@ namespace RemoteFortressReader
   {
     public UnitList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.UnitDefinition> _creature_list = new global::System.Collections.Generic.List<RemoteFortressReader.UnitDefinition>();
     [global::ProtoBuf.ProtoMember(1, Name=@"creature_list", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.UnitDefinition> creature_list
@@ -1601,7 +1601,7 @@ namespace RemoteFortressReader
   {
     public BlockRequest() {}
     
-    [UnityEngine.SerializeField]
+
     private int _blocks_needed = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"blocks_needed", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1610,7 +1610,7 @@ namespace RemoteFortressReader
       get { return _blocks_needed; }
       set { _blocks_needed = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _min_x = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"min_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1619,7 +1619,7 @@ namespace RemoteFortressReader
       get { return _min_x; }
       set { _min_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _max_x = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"max_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1628,7 +1628,7 @@ namespace RemoteFortressReader
       get { return _max_x; }
       set { _max_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _min_y = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"min_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1637,7 +1637,7 @@ namespace RemoteFortressReader
       get { return _min_y; }
       set { _min_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _max_y = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"max_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1646,7 +1646,7 @@ namespace RemoteFortressReader
       get { return _max_y; }
       set { _max_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _min_z = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"min_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1655,7 +1655,7 @@ namespace RemoteFortressReader
       get { return _min_z; }
       set { _min_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _max_z = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"max_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1674,7 +1674,7 @@ namespace RemoteFortressReader
   {
     public BlockList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MapBlock> _map_blocks = new global::System.Collections.Generic.List<RemoteFortressReader.MapBlock>();
     [global::ProtoBuf.ProtoMember(1, Name=@"map_blocks", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MapBlock> map_blocks
@@ -1682,7 +1682,7 @@ namespace RemoteFortressReader
       get { return _map_blocks; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _map_x = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"map_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1691,7 +1691,7 @@ namespace RemoteFortressReader
       get { return _map_x; }
       set { _map_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _map_y = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"map_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1700,7 +1700,7 @@ namespace RemoteFortressReader
       get { return _map_y; }
       set { _map_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Engraving> _engravings = new global::System.Collections.Generic.List<RemoteFortressReader.Engraving>();
     [global::ProtoBuf.ProtoMember(4, Name=@"engravings", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Engraving> engravings
@@ -1708,7 +1708,7 @@ namespace RemoteFortressReader
       get { return _engravings; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Wave> _ocean_waves = new global::System.Collections.Generic.List<RemoteFortressReader.Wave>();
     [global::ProtoBuf.ProtoMember(5, Name=@"ocean_waves", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Wave> ocean_waves
@@ -1726,7 +1726,7 @@ namespace RemoteFortressReader
   {
     public PlantDef() {}
     
-    [UnityEngine.SerializeField]
+
     private int _pos_x;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int pos_x
@@ -1734,7 +1734,7 @@ namespace RemoteFortressReader
       get { return _pos_x; }
       set { _pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_y;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int pos_y
@@ -1742,7 +1742,7 @@ namespace RemoteFortressReader
       get { return _pos_y; }
       set { _pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_z;
     [global::ProtoBuf.ProtoMember(3, IsRequired = true, Name=@"pos_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int pos_z
@@ -1750,7 +1750,7 @@ namespace RemoteFortressReader
       get { return _pos_z; }
       set { _pos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _index;
     [global::ProtoBuf.ProtoMember(4, IsRequired = true, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int index
@@ -1768,7 +1768,7 @@ namespace RemoteFortressReader
   {
     public PlantList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.PlantDef> _plant_list = new global::System.Collections.Generic.List<RemoteFortressReader.PlantDef>();
     [global::ProtoBuf.ProtoMember(1, Name=@"plant_list", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.PlantDef> plant_list
@@ -1786,7 +1786,7 @@ namespace RemoteFortressReader
   {
     public ViewInfo() {}
     
-    [UnityEngine.SerializeField]
+
     private int _view_pos_x = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"view_pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1795,7 +1795,7 @@ namespace RemoteFortressReader
       get { return _view_pos_x; }
       set { _view_pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _view_pos_y = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"view_pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1804,7 +1804,7 @@ namespace RemoteFortressReader
       get { return _view_pos_y; }
       set { _view_pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _view_pos_z = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"view_pos_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1813,7 +1813,7 @@ namespace RemoteFortressReader
       get { return _view_pos_z; }
       set { _view_pos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _view_size_x = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"view_size_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1822,7 +1822,7 @@ namespace RemoteFortressReader
       get { return _view_size_x; }
       set { _view_size_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _view_size_y = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"view_size_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1831,7 +1831,7 @@ namespace RemoteFortressReader
       get { return _view_size_y; }
       set { _view_size_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _cursor_pos_x = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"cursor_pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1840,7 +1840,7 @@ namespace RemoteFortressReader
       get { return _cursor_pos_x; }
       set { _cursor_pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _cursor_pos_y = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"cursor_pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1849,7 +1849,7 @@ namespace RemoteFortressReader
       get { return _cursor_pos_y; }
       set { _cursor_pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _cursor_pos_z = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"cursor_pos_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1858,7 +1858,7 @@ namespace RemoteFortressReader
       get { return _cursor_pos_z; }
       set { _cursor_pos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _follow_unit_id = (int)-1;
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"follow_unit_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue((int)-1)]
@@ -1867,7 +1867,7 @@ namespace RemoteFortressReader
       get { return _follow_unit_id; }
       set { _follow_unit_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _follow_item_id = (int)-1;
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"follow_item_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue((int)-1)]
@@ -1886,7 +1886,7 @@ namespace RemoteFortressReader
   {
     public MapInfo() {}
     
-    [UnityEngine.SerializeField]
+
     private int _block_size_x = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"block_size_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1895,7 +1895,7 @@ namespace RemoteFortressReader
       get { return _block_size_x; }
       set { _block_size_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _block_size_y = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"block_size_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1904,7 +1904,7 @@ namespace RemoteFortressReader
       get { return _block_size_y; }
       set { _block_size_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _block_size_z = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"block_size_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1913,7 +1913,7 @@ namespace RemoteFortressReader
       get { return _block_size_z; }
       set { _block_size_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _block_pos_x = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"block_pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1922,7 +1922,7 @@ namespace RemoteFortressReader
       get { return _block_pos_x; }
       set { _block_pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _block_pos_y = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"block_pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1931,7 +1931,7 @@ namespace RemoteFortressReader
       get { return _block_pos_y; }
       set { _block_pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _block_pos_z = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"block_pos_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -1940,7 +1940,7 @@ namespace RemoteFortressReader
       get { return _block_pos_z; }
       set { _block_pos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _world_name = "";
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"world_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1949,7 +1949,7 @@ namespace RemoteFortressReader
       get { return _world_name; }
       set { _world_name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _world_name_english = "";
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"world_name_english", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1958,7 +1958,7 @@ namespace RemoteFortressReader
       get { return _world_name_english; }
       set { _world_name_english = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _save_name = "";
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"save_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -1977,7 +1977,7 @@ namespace RemoteFortressReader
   {
     public Cloud() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.FrontType _front = RemoteFortressReader.FrontType.FRONT_NONE;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"front", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.FrontType.FRONT_NONE)]
@@ -1986,7 +1986,7 @@ namespace RemoteFortressReader
       get { return _front; }
       set { _front = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.CumulusType _cumulus = RemoteFortressReader.CumulusType.CUMULUS_NONE;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"cumulus", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.CumulusType.CUMULUS_NONE)]
@@ -1995,7 +1995,7 @@ namespace RemoteFortressReader
       get { return _cumulus; }
       set { _cumulus = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _cirrus = default(bool);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"cirrus", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -2004,7 +2004,7 @@ namespace RemoteFortressReader
       get { return _cirrus; }
       set { _cirrus = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.StratusType _stratus = RemoteFortressReader.StratusType.STRATUS_NONE;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"stratus", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.StratusType.STRATUS_NONE)]
@@ -2013,7 +2013,7 @@ namespace RemoteFortressReader
       get { return _stratus; }
       set { _stratus = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.FogType _fog = RemoteFortressReader.FogType.FOG_NONE;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"fog", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.FogType.FOG_NONE)]
@@ -2032,7 +2032,7 @@ namespace RemoteFortressReader
   {
     public WorldMap() {}
     
-    [UnityEngine.SerializeField]
+
     private int _world_width;
     [global::ProtoBuf.ProtoMember(1, IsRequired = true, Name=@"world_width", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int world_width
@@ -2040,7 +2040,7 @@ namespace RemoteFortressReader
       get { return _world_width; }
       set { _world_width = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _world_height;
     [global::ProtoBuf.ProtoMember(2, IsRequired = true, Name=@"world_height", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public int world_height
@@ -2048,7 +2048,7 @@ namespace RemoteFortressReader
       get { return _world_height; }
       set { _world_height = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2057,7 +2057,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name_english = "";
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"name_english", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2066,7 +2066,7 @@ namespace RemoteFortressReader
       get { return _name_english; }
       set { _name_english = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _elevation = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(5, Name=@"elevation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> elevation
@@ -2074,7 +2074,7 @@ namespace RemoteFortressReader
       get { return _elevation; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _rainfall = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(6, Name=@"rainfall", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> rainfall
@@ -2082,7 +2082,7 @@ namespace RemoteFortressReader
       get { return _rainfall; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _vegetation = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(7, Name=@"vegetation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> vegetation
@@ -2090,7 +2090,7 @@ namespace RemoteFortressReader
       get { return _vegetation; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _temperature = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(8, Name=@"temperature", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> temperature
@@ -2098,7 +2098,7 @@ namespace RemoteFortressReader
       get { return _temperature; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _evilness = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(9, Name=@"evilness", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> evilness
@@ -2106,7 +2106,7 @@ namespace RemoteFortressReader
       get { return _evilness; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _drainage = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(10, Name=@"drainage", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> drainage
@@ -2114,7 +2114,7 @@ namespace RemoteFortressReader
       get { return _drainage; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _volcanism = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(11, Name=@"volcanism", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> volcanism
@@ -2122,7 +2122,7 @@ namespace RemoteFortressReader
       get { return _volcanism; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _savagery = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(12, Name=@"savagery", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> savagery
@@ -2130,7 +2130,7 @@ namespace RemoteFortressReader
       get { return _savagery; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Cloud> _clouds = new global::System.Collections.Generic.List<RemoteFortressReader.Cloud>();
     [global::ProtoBuf.ProtoMember(13, Name=@"clouds", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Cloud> clouds
@@ -2138,7 +2138,7 @@ namespace RemoteFortressReader
       get { return _clouds; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _salinity = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(14, Name=@"salinity", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> salinity
@@ -2146,7 +2146,7 @@ namespace RemoteFortressReader
       get { return _salinity; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _map_x = default(int);
     [global::ProtoBuf.ProtoMember(15, IsRequired = false, Name=@"map_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2155,7 +2155,7 @@ namespace RemoteFortressReader
       get { return _map_x; }
       set { _map_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _map_y = default(int);
     [global::ProtoBuf.ProtoMember(16, IsRequired = false, Name=@"map_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2164,7 +2164,7 @@ namespace RemoteFortressReader
       get { return _map_y; }
       set { _map_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _center_x = default(int);
     [global::ProtoBuf.ProtoMember(17, IsRequired = false, Name=@"center_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2173,7 +2173,7 @@ namespace RemoteFortressReader
       get { return _center_x; }
       set { _center_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _center_y = default(int);
     [global::ProtoBuf.ProtoMember(18, IsRequired = false, Name=@"center_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2182,7 +2182,7 @@ namespace RemoteFortressReader
       get { return _center_y; }
       set { _center_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _center_z = default(int);
     [global::ProtoBuf.ProtoMember(19, IsRequired = false, Name=@"center_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2191,7 +2191,7 @@ namespace RemoteFortressReader
       get { return _center_z; }
       set { _center_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _cur_year = default(int);
     [global::ProtoBuf.ProtoMember(20, IsRequired = false, Name=@"cur_year", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2200,7 +2200,7 @@ namespace RemoteFortressReader
       get { return _cur_year; }
       set { _cur_year = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _cur_year_tick = default(int);
     [global::ProtoBuf.ProtoMember(21, IsRequired = false, Name=@"cur_year_tick", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2209,7 +2209,7 @@ namespace RemoteFortressReader
       get { return _cur_year_tick; }
       set { _cur_year_tick = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.WorldPoles _world_poles = RemoteFortressReader.WorldPoles.NO_POLES;
     [global::ProtoBuf.ProtoMember(22, IsRequired = false, Name=@"world_poles", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.WorldPoles.NO_POLES)]
@@ -2218,7 +2218,7 @@ namespace RemoteFortressReader
       get { return _world_poles; }
       set { _world_poles = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.RiverTile> _river_tiles = new global::System.Collections.Generic.List<RemoteFortressReader.RiverTile>();
     [global::ProtoBuf.ProtoMember(23, Name=@"river_tiles", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.RiverTile> river_tiles
@@ -2226,7 +2226,7 @@ namespace RemoteFortressReader
       get { return _river_tiles; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _water_elevation = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(24, Name=@"water_elevation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> water_elevation
@@ -2234,7 +2234,7 @@ namespace RemoteFortressReader
       get { return _water_elevation; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.RegionTile> _region_tiles = new global::System.Collections.Generic.List<RemoteFortressReader.RegionTile>();
     [global::ProtoBuf.ProtoMember(25, Name=@"region_tiles", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.RegionTile> region_tiles
@@ -2252,7 +2252,7 @@ namespace RemoteFortressReader
   {
     public SiteRealizationBuildingWall() {}
     
-    [UnityEngine.SerializeField]
+
     private int _start_x = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"start_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2261,7 +2261,7 @@ namespace RemoteFortressReader
       get { return _start_x; }
       set { _start_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _start_y = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"start_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2270,7 +2270,7 @@ namespace RemoteFortressReader
       get { return _start_y; }
       set { _start_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _start_z = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"start_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2279,7 +2279,7 @@ namespace RemoteFortressReader
       get { return _start_z; }
       set { _start_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _end_x = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"end_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2288,7 +2288,7 @@ namespace RemoteFortressReader
       get { return _end_x; }
       set { _end_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _end_y = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"end_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2297,7 +2297,7 @@ namespace RemoteFortressReader
       get { return _end_y; }
       set { _end_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _end_z = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"end_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2316,7 +2316,7 @@ namespace RemoteFortressReader
   {
     public SiteRealizationBuildingTower() {}
     
-    [UnityEngine.SerializeField]
+
     private int _roof_z = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"roof_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2325,7 +2325,7 @@ namespace RemoteFortressReader
       get { return _roof_z; }
       set { _roof_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _round = default(bool);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"round", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -2334,7 +2334,7 @@ namespace RemoteFortressReader
       get { return _round; }
       set { _round = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _goblin = default(bool);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"goblin", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -2353,7 +2353,7 @@ namespace RemoteFortressReader
   {
     public TrenchSpoke() {}
     
-    [UnityEngine.SerializeField]
+
     private int _mound_start = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"mound_start", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2362,7 +2362,7 @@ namespace RemoteFortressReader
       get { return _mound_start; }
       set { _mound_start = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _trench_start = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"trench_start", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2371,7 +2371,7 @@ namespace RemoteFortressReader
       get { return _trench_start; }
       set { _trench_start = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _trench_end = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"trench_end", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2380,7 +2380,7 @@ namespace RemoteFortressReader
       get { return _trench_end; }
       set { _trench_end = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _mound_end = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"mound_end", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2399,7 +2399,7 @@ namespace RemoteFortressReader
   {
     public SiteRealizationBuildingTrenches() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.TrenchSpoke> _spokes = new global::System.Collections.Generic.List<RemoteFortressReader.TrenchSpoke>();
     [global::ProtoBuf.ProtoMember(1, Name=@"spokes", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.TrenchSpoke> spokes
@@ -2417,7 +2417,7 @@ namespace RemoteFortressReader
   {
     public SiteRealizationBuilding() {}
     
-    [UnityEngine.SerializeField]
+
     private int _id = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2426,7 +2426,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.SiteRealizationBuildingType _type = RemoteFortressReader.SiteRealizationBuildingType.cottage_plot;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.SiteRealizationBuildingType.cottage_plot)]
@@ -2435,7 +2435,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _min_x = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"min_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2444,7 +2444,7 @@ namespace RemoteFortressReader
       get { return _min_x; }
       set { _min_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _min_y = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"min_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2453,7 +2453,7 @@ namespace RemoteFortressReader
       get { return _min_y; }
       set { _min_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _max_x = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"max_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2462,7 +2462,7 @@ namespace RemoteFortressReader
       get { return _max_x; }
       set { _max_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _max_y = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"max_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2471,7 +2471,7 @@ namespace RemoteFortressReader
       get { return _max_y; }
       set { _max_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -2480,7 +2480,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.SiteRealizationBuildingWall _wall_info = null;
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"wall_info", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -2489,7 +2489,7 @@ namespace RemoteFortressReader
       get { return _wall_info; }
       set { _wall_info = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.SiteRealizationBuildingTower _tower_info = null;
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"tower_info", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -2498,7 +2498,7 @@ namespace RemoteFortressReader
       get { return _tower_info; }
       set { _tower_info = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.SiteRealizationBuildingTrenches _trench_info = null;
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"trench_info", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -2517,7 +2517,7 @@ namespace RemoteFortressReader
   {
     public RegionTile() {}
     
-    [UnityEngine.SerializeField]
+
     private int _elevation = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"elevation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2526,7 +2526,7 @@ namespace RemoteFortressReader
       get { return _elevation; }
       set { _elevation = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _rainfall = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"rainfall", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2535,7 +2535,7 @@ namespace RemoteFortressReader
       get { return _rainfall; }
       set { _rainfall = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _vegetation = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"vegetation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2544,7 +2544,7 @@ namespace RemoteFortressReader
       get { return _vegetation; }
       set { _vegetation = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _temperature = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"temperature", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2553,7 +2553,7 @@ namespace RemoteFortressReader
       get { return _temperature; }
       set { _temperature = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _evilness = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"evilness", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2562,7 +2562,7 @@ namespace RemoteFortressReader
       get { return _evilness; }
       set { _evilness = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _drainage = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"drainage", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2571,7 +2571,7 @@ namespace RemoteFortressReader
       get { return _drainage; }
       set { _drainage = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _volcanism = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"volcanism", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2580,7 +2580,7 @@ namespace RemoteFortressReader
       get { return _volcanism; }
       set { _volcanism = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _savagery = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"savagery", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2589,7 +2589,7 @@ namespace RemoteFortressReader
       get { return _savagery; }
       set { _savagery = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _salinity = default(int);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"salinity", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2598,7 +2598,7 @@ namespace RemoteFortressReader
       get { return _salinity; }
       set { _salinity = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.RiverTile _river_tiles = null;
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"river_tiles", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -2607,7 +2607,7 @@ namespace RemoteFortressReader
       get { return _river_tiles; }
       set { _river_tiles = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _water_elevation = default(int);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"water_elevation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2616,7 +2616,7 @@ namespace RemoteFortressReader
       get { return _water_elevation; }
       set { _water_elevation = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _surface_material = null;
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"surface_material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -2625,7 +2625,7 @@ namespace RemoteFortressReader
       get { return _surface_material; }
       set { _surface_material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _plant_materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(13, Name=@"plant_materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> plant_materials
@@ -2633,7 +2633,7 @@ namespace RemoteFortressReader
       get { return _plant_materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.SiteRealizationBuilding> _buildings = new global::System.Collections.Generic.List<RemoteFortressReader.SiteRealizationBuilding>();
     [global::ProtoBuf.ProtoMember(14, Name=@"buildings", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.SiteRealizationBuilding> buildings
@@ -2641,7 +2641,7 @@ namespace RemoteFortressReader
       get { return _buildings; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _stone_materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(15, Name=@"stone_materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> stone_materials
@@ -2649,7 +2649,7 @@ namespace RemoteFortressReader
       get { return _stone_materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.MatPair> _tree_materials = new global::System.Collections.Generic.List<RemoteFortressReader.MatPair>();
     [global::ProtoBuf.ProtoMember(16, Name=@"tree_materials", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.MatPair> tree_materials
@@ -2657,7 +2657,7 @@ namespace RemoteFortressReader
       get { return _tree_materials; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _snow = default(int);
     [global::ProtoBuf.ProtoMember(17, IsRequired = false, Name=@"snow", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2676,7 +2676,7 @@ namespace RemoteFortressReader
   {
     public RegionMap() {}
     
-    [UnityEngine.SerializeField]
+
     private int _map_x = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"map_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2685,7 +2685,7 @@ namespace RemoteFortressReader
       get { return _map_x; }
       set { _map_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _map_y = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"map_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2694,7 +2694,7 @@ namespace RemoteFortressReader
       get { return _map_y; }
       set { _map_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2703,7 +2703,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name_english = "";
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"name_english", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2712,7 +2712,7 @@ namespace RemoteFortressReader
       get { return _name_english; }
       set { _name_english = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.RegionTile> _tiles = new global::System.Collections.Generic.List<RemoteFortressReader.RegionTile>();
     [global::ProtoBuf.ProtoMember(5, Name=@"tiles", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.RegionTile> tiles
@@ -2730,7 +2730,7 @@ namespace RemoteFortressReader
   {
     public RegionMaps() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.WorldMap> _world_maps = new global::System.Collections.Generic.List<RemoteFortressReader.WorldMap>();
     [global::ProtoBuf.ProtoMember(1, Name=@"world_maps", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.WorldMap> world_maps
@@ -2738,7 +2738,7 @@ namespace RemoteFortressReader
       get { return _world_maps; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.RegionMap> _region_maps = new global::System.Collections.Generic.List<RemoteFortressReader.RegionMap>();
     [global::ProtoBuf.ProtoMember(2, Name=@"region_maps", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.RegionMap> region_maps
@@ -2756,7 +2756,7 @@ namespace RemoteFortressReader
   {
     public PatternDescriptor() {}
     
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2765,7 +2765,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ColorDefinition> _colors = new global::System.Collections.Generic.List<RemoteFortressReader.ColorDefinition>();
     [global::ProtoBuf.ProtoMember(2, Name=@"colors", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ColorDefinition> colors
@@ -2773,7 +2773,7 @@ namespace RemoteFortressReader
       get { return _colors; }
     }
   
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.PatternType _pattern = RemoteFortressReader.PatternType.MONOTONE;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"pattern", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.PatternType.MONOTONE)]
@@ -2792,7 +2792,7 @@ namespace RemoteFortressReader
   {
     public ColorModifierRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.PatternDescriptor> _patterns = new global::System.Collections.Generic.List<RemoteFortressReader.PatternDescriptor>();
     [global::ProtoBuf.ProtoMember(1, Name=@"patterns", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.PatternDescriptor> patterns
@@ -2800,7 +2800,7 @@ namespace RemoteFortressReader
       get { return _patterns; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _body_part_id = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(2, Name=@"body_part_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> body_part_id
@@ -2808,7 +2808,7 @@ namespace RemoteFortressReader
       get { return _body_part_id; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _tissue_layer_id = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(3, Name=@"tissue_layer_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> tissue_layer_id
@@ -2816,7 +2816,7 @@ namespace RemoteFortressReader
       get { return _tissue_layer_id; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _start_date = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"start_date", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2825,7 +2825,7 @@ namespace RemoteFortressReader
       get { return _start_date; }
       set { _start_date = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _end_date = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"end_date", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2834,7 +2834,7 @@ namespace RemoteFortressReader
       get { return _end_date; }
       set { _end_date = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _part = "";
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"part", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2853,7 +2853,7 @@ namespace RemoteFortressReader
   {
     public BodyPartLayerRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private string _layer_name = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"layer_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2862,7 +2862,7 @@ namespace RemoteFortressReader
       get { return _layer_name; }
       set { _layer_name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _tissue_id = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"tissue_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2871,7 +2871,7 @@ namespace RemoteFortressReader
       get { return _tissue_id; }
       set { _tissue_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _layer_depth = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"layer_depth", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2880,7 +2880,7 @@ namespace RemoteFortressReader
       get { return _layer_depth; }
       set { _layer_depth = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _bp_modifiers = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(4, Name=@"bp_modifiers", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> bp_modifiers
@@ -2898,7 +2898,7 @@ namespace RemoteFortressReader
   {
     public BodyPartRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private string _token = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"token", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2907,7 +2907,7 @@ namespace RemoteFortressReader
       get { return _token; }
       set { _token = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _category = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"category", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2916,7 +2916,7 @@ namespace RemoteFortressReader
       get { return _category; }
       set { _category = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _parent = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"parent", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2925,7 +2925,7 @@ namespace RemoteFortressReader
       get { return _parent; }
       set { _parent = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<bool> _flags = new global::System.Collections.Generic.List<bool>();
     [global::ProtoBuf.ProtoMember(4, Name=@"flags", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<bool> flags
@@ -2933,7 +2933,7 @@ namespace RemoteFortressReader
       get { return _flags; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BodyPartLayerRaw> _layers = new global::System.Collections.Generic.List<RemoteFortressReader.BodyPartLayerRaw>();
     [global::ProtoBuf.ProtoMember(5, Name=@"layers", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BodyPartLayerRaw> layers
@@ -2941,7 +2941,7 @@ namespace RemoteFortressReader
       get { return _layers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _relsize = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"relsize", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2960,7 +2960,7 @@ namespace RemoteFortressReader
   {
     public BpAppearanceModifier() {}
     
-    [UnityEngine.SerializeField]
+
     private string _type = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -2969,7 +2969,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _mod_min = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"mod_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2978,7 +2978,7 @@ namespace RemoteFortressReader
       get { return _mod_min; }
       set { _mod_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _mod_max = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"mod_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -2997,7 +2997,7 @@ namespace RemoteFortressReader
   {
     public TissueRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3006,7 +3006,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3015,7 +3015,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -3024,7 +3024,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _subordinate_to_tissue = "";
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"subordinate_to_tissue", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3043,7 +3043,7 @@ namespace RemoteFortressReader
   {
     public CasteRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private int _index = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3052,7 +3052,7 @@ namespace RemoteFortressReader
       get { return _index; }
       set { _index = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _caste_id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"caste_id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3061,7 +3061,7 @@ namespace RemoteFortressReader
       get { return _caste_id; }
       set { _caste_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _caste_name = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(3, Name=@"caste_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> caste_name
@@ -3069,7 +3069,7 @@ namespace RemoteFortressReader
       get { return _caste_name; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _baby_name = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(4, Name=@"baby_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> baby_name
@@ -3077,7 +3077,7 @@ namespace RemoteFortressReader
       get { return _baby_name; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _child_name = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(5, Name=@"child_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> child_name
@@ -3085,7 +3085,7 @@ namespace RemoteFortressReader
       get { return _child_name; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _gender = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"gender", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3094,7 +3094,7 @@ namespace RemoteFortressReader
       get { return _gender; }
       set { _gender = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BodyPartRaw> _body_parts = new global::System.Collections.Generic.List<RemoteFortressReader.BodyPartRaw>();
     [global::ProtoBuf.ProtoMember(7, Name=@"body_parts", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BodyPartRaw> body_parts
@@ -3102,7 +3102,7 @@ namespace RemoteFortressReader
       get { return _body_parts; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _total_relsize = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"total_relsize", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3111,7 +3111,7 @@ namespace RemoteFortressReader
       get { return _total_relsize; }
       set { _total_relsize = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BpAppearanceModifier> _modifiers = new global::System.Collections.Generic.List<RemoteFortressReader.BpAppearanceModifier>();
     [global::ProtoBuf.ProtoMember(9, Name=@"modifiers", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BpAppearanceModifier> modifiers
@@ -3119,7 +3119,7 @@ namespace RemoteFortressReader
       get { return _modifiers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _modifier_idx = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(10, Name=@"modifier_idx", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> modifier_idx
@@ -3127,7 +3127,7 @@ namespace RemoteFortressReader
       get { return _modifier_idx; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _part_idx = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(11, Name=@"part_idx", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> part_idx
@@ -3135,7 +3135,7 @@ namespace RemoteFortressReader
       get { return _part_idx; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<int> _layer_idx = new global::System.Collections.Generic.List<int>();
     [global::ProtoBuf.ProtoMember(12, Name=@"layer_idx", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<int> layer_idx
@@ -3143,7 +3143,7 @@ namespace RemoteFortressReader
       get { return _layer_idx; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.BpAppearanceModifier> _body_appearance_modifiers = new global::System.Collections.Generic.List<RemoteFortressReader.BpAppearanceModifier>();
     [global::ProtoBuf.ProtoMember(13, Name=@"body_appearance_modifiers", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.BpAppearanceModifier> body_appearance_modifiers
@@ -3151,7 +3151,7 @@ namespace RemoteFortressReader
       get { return _body_appearance_modifiers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ColorModifierRaw> _color_modifiers = new global::System.Collections.Generic.List<RemoteFortressReader.ColorModifierRaw>();
     [global::ProtoBuf.ProtoMember(14, Name=@"color_modifiers", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ColorModifierRaw> color_modifiers
@@ -3159,7 +3159,7 @@ namespace RemoteFortressReader
       get { return _color_modifiers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private string _description = "";
     [global::ProtoBuf.ProtoMember(15, IsRequired = false, Name=@"description", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3168,7 +3168,7 @@ namespace RemoteFortressReader
       get { return _description; }
       set { _description = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _adult_size = default(int);
     [global::ProtoBuf.ProtoMember(16, IsRequired = false, Name=@"adult_size", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3187,7 +3187,7 @@ namespace RemoteFortressReader
   {
     public CreatureRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private int _index = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3196,7 +3196,7 @@ namespace RemoteFortressReader
       get { return _index; }
       set { _index = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _creature_id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"creature_id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3205,7 +3205,7 @@ namespace RemoteFortressReader
       get { return _creature_id; }
       set { _creature_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _name = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(3, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> name
@@ -3213,7 +3213,7 @@ namespace RemoteFortressReader
       get { return _name; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _general_baby_name = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(4, Name=@"general_baby_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> general_baby_name
@@ -3221,7 +3221,7 @@ namespace RemoteFortressReader
       get { return _general_baby_name; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _general_child_name = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(5, Name=@"general_child_name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> general_child_name
@@ -3229,7 +3229,7 @@ namespace RemoteFortressReader
       get { return _general_child_name; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _creature_tile = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"creature_tile", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3238,7 +3238,7 @@ namespace RemoteFortressReader
       get { return _creature_tile; }
       set { _creature_tile = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _creature_soldier_tile = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"creature_soldier_tile", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3247,7 +3247,7 @@ namespace RemoteFortressReader
       get { return _creature_soldier_tile; }
       set { _creature_soldier_tile = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ColorDefinition _color = null;
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"color", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -3256,7 +3256,7 @@ namespace RemoteFortressReader
       get { return _color; }
       set { _color = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _adultsize = default(int);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"adultsize", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3265,7 +3265,7 @@ namespace RemoteFortressReader
       get { return _adultsize; }
       set { _adultsize = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.CasteRaw> _caste = new global::System.Collections.Generic.List<RemoteFortressReader.CasteRaw>();
     [global::ProtoBuf.ProtoMember(10, Name=@"caste", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.CasteRaw> caste
@@ -3273,7 +3273,7 @@ namespace RemoteFortressReader
       get { return _caste; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.TissueRaw> _tissues = new global::System.Collections.Generic.List<RemoteFortressReader.TissueRaw>();
     [global::ProtoBuf.ProtoMember(11, Name=@"tissues", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.TissueRaw> tissues
@@ -3291,7 +3291,7 @@ namespace RemoteFortressReader
   {
     public CreatureRawList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.CreatureRaw> _creature_raws = new global::System.Collections.Generic.List<RemoteFortressReader.CreatureRaw>();
     [global::ProtoBuf.ProtoMember(1, Name=@"creature_raws", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.CreatureRaw> creature_raws
@@ -3309,7 +3309,7 @@ namespace RemoteFortressReader
   {
     public Army() {}
     
-    [UnityEngine.SerializeField]
+
     private int _id = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3318,7 +3318,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_x = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"pos_x", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3327,7 +3327,7 @@ namespace RemoteFortressReader
       get { return _pos_x; }
       set { _pos_x = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_y = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"pos_y", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3336,7 +3336,7 @@ namespace RemoteFortressReader
       get { return _pos_y; }
       set { _pos_y = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pos_z = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"pos_z", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3345,7 +3345,7 @@ namespace RemoteFortressReader
       get { return _pos_z; }
       set { _pos_z = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.UnitDefinition _leader = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"leader", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -3354,7 +3354,7 @@ namespace RemoteFortressReader
       get { return _leader; }
       set { _leader = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.UnitDefinition> _members = new global::System.Collections.Generic.List<RemoteFortressReader.UnitDefinition>();
     [global::ProtoBuf.ProtoMember(6, Name=@"members", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.UnitDefinition> members
@@ -3362,7 +3362,7 @@ namespace RemoteFortressReader
       get { return _members; }
     }
   
-    [UnityEngine.SerializeField]
+
     private uint _flags = default(uint);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"flags", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3381,7 +3381,7 @@ namespace RemoteFortressReader
   {
     public ArmyList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Army> _armies = new global::System.Collections.Generic.List<RemoteFortressReader.Army>();
     [global::ProtoBuf.ProtoMember(1, Name=@"armies", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Army> armies
@@ -3399,7 +3399,7 @@ namespace RemoteFortressReader
   {
     public GrowthPrint() {}
     
-    [UnityEngine.SerializeField]
+
     private int _priority = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"priority", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3408,7 +3408,7 @@ namespace RemoteFortressReader
       get { return _priority; }
       set { _priority = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _color = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"color", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3417,7 +3417,7 @@ namespace RemoteFortressReader
       get { return _color; }
       set { _color = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _timing_start = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"timing_start", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3426,7 +3426,7 @@ namespace RemoteFortressReader
       get { return _timing_start; }
       set { _timing_start = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _timing_end = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"timing_end", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3435,7 +3435,7 @@ namespace RemoteFortressReader
       get { return _timing_end; }
       set { _timing_end = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _tile = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"tile", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3454,7 +3454,7 @@ namespace RemoteFortressReader
   {
     public TreeGrowth() {}
     
-    [UnityEngine.SerializeField]
+
     private int _index = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3463,7 +3463,7 @@ namespace RemoteFortressReader
       get { return _index; }
       set { _index = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3472,7 +3472,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3481,7 +3481,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _mat = null;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -3490,7 +3490,7 @@ namespace RemoteFortressReader
       get { return _mat; }
       set { _mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.GrowthPrint> _prints = new global::System.Collections.Generic.List<RemoteFortressReader.GrowthPrint>();
     [global::ProtoBuf.ProtoMember(5, Name=@"prints", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.GrowthPrint> prints
@@ -3498,7 +3498,7 @@ namespace RemoteFortressReader
       get { return _prints; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _timing_start = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"timing_start", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3507,7 +3507,7 @@ namespace RemoteFortressReader
       get { return _timing_start; }
       set { _timing_start = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _timing_end = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"timing_end", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3516,7 +3516,7 @@ namespace RemoteFortressReader
       get { return _timing_end; }
       set { _timing_end = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _twigs = default(bool);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"twigs", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3525,7 +3525,7 @@ namespace RemoteFortressReader
       get { return _twigs; }
       set { _twigs = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _light_branches = default(bool);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"light_branches", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3534,7 +3534,7 @@ namespace RemoteFortressReader
       get { return _light_branches; }
       set { _light_branches = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _heavy_branches = default(bool);
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"heavy_branches", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3543,7 +3543,7 @@ namespace RemoteFortressReader
       get { return _heavy_branches; }
       set { _heavy_branches = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _trunk = default(bool);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"trunk", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3552,7 +3552,7 @@ namespace RemoteFortressReader
       get { return _trunk; }
       set { _trunk = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _roots = default(bool);
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"roots", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3561,7 +3561,7 @@ namespace RemoteFortressReader
       get { return _roots; }
       set { _roots = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _cap = default(bool);
     [global::ProtoBuf.ProtoMember(13, IsRequired = false, Name=@"cap", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3570,7 +3570,7 @@ namespace RemoteFortressReader
       get { return _cap; }
       set { _cap = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _sapling = default(bool);
     [global::ProtoBuf.ProtoMember(14, IsRequired = false, Name=@"sapling", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3579,7 +3579,7 @@ namespace RemoteFortressReader
       get { return _sapling; }
       set { _sapling = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _trunk_height_start = default(int);
     [global::ProtoBuf.ProtoMember(15, IsRequired = false, Name=@"trunk_height_start", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3588,7 +3588,7 @@ namespace RemoteFortressReader
       get { return _trunk_height_start; }
       set { _trunk_height_start = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _trunk_height_end = default(int);
     [global::ProtoBuf.ProtoMember(16, IsRequired = false, Name=@"trunk_height_end", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3607,7 +3607,7 @@ namespace RemoteFortressReader
   {
     public PlantRaw() {}
     
-    [UnityEngine.SerializeField]
+
     private int _index = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3616,7 +3616,7 @@ namespace RemoteFortressReader
       get { return _index; }
       set { _index = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3625,7 +3625,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3634,7 +3634,7 @@ namespace RemoteFortressReader
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.TreeGrowth> _growths = new global::System.Collections.Generic.List<RemoteFortressReader.TreeGrowth>();
     [global::ProtoBuf.ProtoMember(4, Name=@"growths", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.TreeGrowth> growths
@@ -3642,7 +3642,7 @@ namespace RemoteFortressReader
       get { return _growths; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _tile = default(int);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"tile", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3661,7 +3661,7 @@ namespace RemoteFortressReader
   {
     public PlantRawList() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.PlantRaw> _plant_raws = new global::System.Collections.Generic.List<RemoteFortressReader.PlantRaw>();
     [global::ProtoBuf.ProtoMember(1, Name=@"plant_raws", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.PlantRaw> plant_raws
@@ -3679,7 +3679,7 @@ namespace RemoteFortressReader
   {
     public ScreenTile() {}
     
-    [UnityEngine.SerializeField]
+
     private uint _character = default(uint);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"character", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3688,7 +3688,7 @@ namespace RemoteFortressReader
       get { return _character; }
       set { _character = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _foreground = default(uint);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"foreground", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3697,7 +3697,7 @@ namespace RemoteFortressReader
       get { return _foreground; }
       set { _foreground = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _background = default(uint);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"background", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3716,7 +3716,7 @@ namespace RemoteFortressReader
   {
     public ScreenCapture() {}
     
-    [UnityEngine.SerializeField]
+
     private uint _width = default(uint);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"width", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3725,7 +3725,7 @@ namespace RemoteFortressReader
       get { return _width; }
       set { _width = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _height = default(uint);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"height", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3734,7 +3734,7 @@ namespace RemoteFortressReader
       get { return _height; }
       set { _height = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ScreenTile> _tiles = new global::System.Collections.Generic.List<RemoteFortressReader.ScreenTile>();
     [global::ProtoBuf.ProtoMember(3, Name=@"tiles", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ScreenTile> tiles
@@ -3752,7 +3752,7 @@ namespace RemoteFortressReader
   {
     public KeyboardEvent() {}
     
-    [UnityEngine.SerializeField]
+
     private uint _type = default(uint);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3761,7 +3761,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _which = default(uint);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"which", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3770,7 +3770,7 @@ namespace RemoteFortressReader
       get { return _which; }
       set { _which = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _state = default(uint);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"state", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3779,7 +3779,7 @@ namespace RemoteFortressReader
       get { return _state; }
       set { _state = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _scancode = default(uint);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"scancode", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3788,7 +3788,7 @@ namespace RemoteFortressReader
       get { return _scancode; }
       set { _scancode = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _sym = default(uint);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"sym", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3797,7 +3797,7 @@ namespace RemoteFortressReader
       get { return _sym; }
       set { _sym = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _mod = default(uint);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"mod", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3806,7 +3806,7 @@ namespace RemoteFortressReader
       get { return _mod; }
       set { _mod = value; }
     }
-    [UnityEngine.SerializeField]
+
     private uint _unicode = default(uint);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"unicode", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(uint))]
@@ -3825,7 +3825,7 @@ namespace RemoteFortressReader
   {
     public DigCommand() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.TileDigDesignation _designation = RemoteFortressReader.TileDigDesignation.NO_DIG;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"designation", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.TileDigDesignation.NO_DIG)]
@@ -3834,7 +3834,7 @@ namespace RemoteFortressReader
       get { return _designation; }
       set { _designation = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Coord> _locations = new global::System.Collections.Generic.List<RemoteFortressReader.Coord>();
     [global::ProtoBuf.ProtoMember(2, Name=@"locations", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Coord> locations
@@ -3852,7 +3852,7 @@ namespace RemoteFortressReader
   {
     public SingleBool() {}
     
-    [UnityEngine.SerializeField]
+
     private bool _Value = default(bool);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"Value", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3871,7 +3871,7 @@ namespace RemoteFortressReader
   {
     public VersionInfo() {}
     
-    [UnityEngine.SerializeField]
+
     private string _dwarf_fortress_version = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"dwarf_fortress_version", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3880,7 +3880,7 @@ namespace RemoteFortressReader
       get { return _dwarf_fortress_version; }
       set { _dwarf_fortress_version = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _dfhack_version = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"dfhack_version", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3889,7 +3889,7 @@ namespace RemoteFortressReader
       get { return _dfhack_version; }
       set { _dfhack_version = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _remote_fortress_reader_version = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"remote_fortress_reader_version", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3908,7 +3908,7 @@ namespace RemoteFortressReader
   {
     public ListRequest() {}
     
-    [UnityEngine.SerializeField]
+
     private int _list_start = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"list_start", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3917,7 +3917,7 @@ namespace RemoteFortressReader
       get { return _list_start; }
       set { _list_start = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _list_end = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"list_end", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3936,7 +3936,7 @@ namespace RemoteFortressReader
   {
     public Report() {}
     
-    [UnityEngine.SerializeField]
+
     private int _type = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3945,7 +3945,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _text = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"text", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -3954,7 +3954,7 @@ namespace RemoteFortressReader
       get { return _text; }
       set { _text = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ColorDefinition _color = null;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"color", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -3963,7 +3963,7 @@ namespace RemoteFortressReader
       get { return _color; }
       set { _color = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _duration = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"duration", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -3972,7 +3972,7 @@ namespace RemoteFortressReader
       get { return _duration; }
       set { _duration = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _continuation = default(bool);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"continuation", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3981,7 +3981,7 @@ namespace RemoteFortressReader
       get { return _continuation; }
       set { _continuation = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _unconscious = default(bool);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"unconscious", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3990,7 +3990,7 @@ namespace RemoteFortressReader
       get { return _unconscious; }
       set { _unconscious = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _announcement = default(bool);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"announcement", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -3999,7 +3999,7 @@ namespace RemoteFortressReader
       get { return _announcement; }
       set { _announcement = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _repeat_count = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"repeat_count", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4008,7 +4008,7 @@ namespace RemoteFortressReader
       get { return _repeat_count; }
       set { _repeat_count = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _pos = null;
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"pos", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4017,7 +4017,7 @@ namespace RemoteFortressReader
       get { return _pos; }
       set { _pos = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _id = default(int);
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4026,7 +4026,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _year = default(int);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"year", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4035,7 +4035,7 @@ namespace RemoteFortressReader
       get { return _year; }
       set { _year = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _time = default(int);
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"time", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4054,7 +4054,7 @@ namespace RemoteFortressReader
   {
     public Status() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.Report> _reports = new global::System.Collections.Generic.List<RemoteFortressReader.Report>();
     [global::ProtoBuf.ProtoMember(1, Name=@"reports", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.Report> reports
@@ -4072,7 +4072,7 @@ namespace RemoteFortressReader
   {
     public ShapeDescriptior() {}
     
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -4081,7 +4081,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _tile = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"tile", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4100,7 +4100,7 @@ namespace RemoteFortressReader
   {
     public Language() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ShapeDescriptior> _shapes = new global::System.Collections.Generic.List<RemoteFortressReader.ShapeDescriptior>();
     [global::ProtoBuf.ProtoMember(1, Name=@"shapes", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ShapeDescriptior> shapes
@@ -4118,7 +4118,7 @@ namespace RemoteFortressReader
   {
     public ItemImprovement() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4127,7 +4127,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ImprovementType _type = RemoteFortressReader.ImprovementType.ART_IMAGE;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.ImprovementType.ART_IMAGE)]
@@ -4136,7 +4136,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _shape = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"shape", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4145,7 +4145,7 @@ namespace RemoteFortressReader
       get { return _shape; }
       set { _shape = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _specific_type = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"specific_type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4154,7 +4154,7 @@ namespace RemoteFortressReader
       get { return _specific_type; }
       set { _specific_type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ArtImage _image = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"image", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4173,7 +4173,7 @@ namespace RemoteFortressReader
   {
     public ArtImageElement() {}
     
-    [UnityEngine.SerializeField]
+
     private int _count = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"count", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4182,7 +4182,7 @@ namespace RemoteFortressReader
       get { return _count; }
       set { _count = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ArtImageElementType _type = RemoteFortressReader.ArtImageElementType.IMAGE_CREATURE;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.ArtImageElementType.IMAGE_CREATURE)]
@@ -4191,7 +4191,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _creature_item = null;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"creature_item", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4200,7 +4200,7 @@ namespace RemoteFortressReader
       get { return _creature_item; }
       set { _creature_item = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4209,7 +4209,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _id = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4228,7 +4228,7 @@ namespace RemoteFortressReader
   {
     public ArtImageProperty() {}
     
-    [UnityEngine.SerializeField]
+
     private int _subject = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"subject", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4237,7 +4237,7 @@ namespace RemoteFortressReader
       get { return _subject; }
       set { _subject = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _object = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"object", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4246,7 +4246,7 @@ namespace RemoteFortressReader
       get { return _object; }
       set { _object = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ArtImageVerb _verb = RemoteFortressReader.ArtImageVerb.VERB_WITHERING;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"verb", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.ArtImageVerb.VERB_WITHERING)]
@@ -4255,7 +4255,7 @@ namespace RemoteFortressReader
       get { return _verb; }
       set { _verb = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ArtImagePropertyType _type = RemoteFortressReader.ArtImagePropertyType.TRANSITIVE_VERB;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.ArtImagePropertyType.TRANSITIVE_VERB)]
@@ -4274,7 +4274,7 @@ namespace RemoteFortressReader
   {
     public ArtImage() {}
     
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ArtImageElement> _elements = new global::System.Collections.Generic.List<RemoteFortressReader.ArtImageElement>();
     [global::ProtoBuf.ProtoMember(1, Name=@"elements", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ArtImageElement> elements
@@ -4282,7 +4282,7 @@ namespace RemoteFortressReader
       get { return _elements; }
     }
   
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _id = null;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4291,7 +4291,7 @@ namespace RemoteFortressReader
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<RemoteFortressReader.ArtImageProperty> _properties = new global::System.Collections.Generic.List<RemoteFortressReader.ArtImageProperty>();
     [global::ProtoBuf.ProtoMember(3, Name=@"properties", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<RemoteFortressReader.ArtImageProperty> properties
@@ -4309,7 +4309,7 @@ namespace RemoteFortressReader
   {
     public Engraving() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _pos = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"pos", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4318,7 +4318,7 @@ namespace RemoteFortressReader
       get { return _pos; }
       set { _pos = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _quality = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"quality", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4327,7 +4327,7 @@ namespace RemoteFortressReader
       get { return _quality; }
       set { _quality = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _tile = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"tile", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4336,7 +4336,7 @@ namespace RemoteFortressReader
       get { return _tile; }
       set { _tile = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.ArtImage _image = null;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"image", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4345,7 +4345,7 @@ namespace RemoteFortressReader
       get { return _image; }
       set { _image = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _floor = default(bool);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"floor", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4354,7 +4354,7 @@ namespace RemoteFortressReader
       get { return _floor; }
       set { _floor = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _west = default(bool);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"west", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4363,7 +4363,7 @@ namespace RemoteFortressReader
       get { return _west; }
       set { _west = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _east = default(bool);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"east", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4372,7 +4372,7 @@ namespace RemoteFortressReader
       get { return _east; }
       set { _east = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _north = default(bool);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"north", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4381,7 +4381,7 @@ namespace RemoteFortressReader
       get { return _north; }
       set { _north = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _south = default(bool);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"south", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4390,7 +4390,7 @@ namespace RemoteFortressReader
       get { return _south; }
       set { _south = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _hidden = default(bool);
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"hidden", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4399,7 +4399,7 @@ namespace RemoteFortressReader
       get { return _hidden; }
       set { _hidden = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _northwest = default(bool);
     [global::ProtoBuf.ProtoMember(11, IsRequired = false, Name=@"northwest", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4408,7 +4408,7 @@ namespace RemoteFortressReader
       get { return _northwest; }
       set { _northwest = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _northeast = default(bool);
     [global::ProtoBuf.ProtoMember(12, IsRequired = false, Name=@"northeast", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4417,7 +4417,7 @@ namespace RemoteFortressReader
       get { return _northeast; }
       set { _northeast = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _southwest = default(bool);
     [global::ProtoBuf.ProtoMember(13, IsRequired = false, Name=@"southwest", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4426,7 +4426,7 @@ namespace RemoteFortressReader
       get { return _southwest; }
       set { _southwest = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _southeast = default(bool);
     [global::ProtoBuf.ProtoMember(14, IsRequired = false, Name=@"southeast", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4445,7 +4445,7 @@ namespace RemoteFortressReader
   {
     public FlowInfo() {}
     
-    [UnityEngine.SerializeField]
+
     private int _index = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"index", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4454,7 +4454,7 @@ namespace RemoteFortressReader
       get { return _index; }
       set { _index = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.FlowType _type = RemoteFortressReader.FlowType.Miasma;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(RemoteFortressReader.FlowType.Miasma)]
@@ -4463,7 +4463,7 @@ namespace RemoteFortressReader
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _density = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"density", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4472,7 +4472,7 @@ namespace RemoteFortressReader
       get { return _density; }
       set { _density = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _pos = null;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"pos", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4481,7 +4481,7 @@ namespace RemoteFortressReader
       get { return _pos; }
       set { _pos = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _dest = null;
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"dest", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4490,7 +4490,7 @@ namespace RemoteFortressReader
       get { return _dest; }
       set { _dest = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _expanding = default(bool);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"expanding", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4499,7 +4499,7 @@ namespace RemoteFortressReader
       get { return _expanding; }
       set { _expanding = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _reuse = default(bool);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"reuse", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -4508,7 +4508,7 @@ namespace RemoteFortressReader
       get { return _reuse; }
       set { _reuse = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _guide_id = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"guide_id", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -4517,7 +4517,7 @@ namespace RemoteFortressReader
       get { return _guide_id; }
       set { _guide_id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _material = null;
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"material", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4526,7 +4526,7 @@ namespace RemoteFortressReader
       get { return _material; }
       set { _material = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.MatPair _item = null;
     [global::ProtoBuf.ProtoMember(10, IsRequired = false, Name=@"item", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4545,7 +4545,7 @@ namespace RemoteFortressReader
   {
     public Wave() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _dest = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"dest", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -4554,7 +4554,7 @@ namespace RemoteFortressReader
       get { return _dest; }
       set { _dest = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _pos = null;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"pos", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -5382,7 +5382,7 @@ namespace AdventureControl
   {
     public MoveCommandParams() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _direction = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"direction", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -5401,7 +5401,7 @@ namespace AdventureControl
   {
     public MovementOption() {}
     
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _dest = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"dest", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -5410,7 +5410,7 @@ namespace AdventureControl
       get { return _dest; }
       set { _dest = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _source = null;
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"source", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -5419,7 +5419,7 @@ namespace AdventureControl
       get { return _source; }
       set { _source = value; }
     }
-    [UnityEngine.SerializeField]
+
     private RemoteFortressReader.Coord _grab = null;
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"grab", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -5428,7 +5428,7 @@ namespace AdventureControl
       get { return _grab; }
       set { _grab = value; }
     }
-    [UnityEngine.SerializeField]
+
     private AdventureControl.CarefulMovementType _movement_type = AdventureControl.CarefulMovementType.DEFAULT_MOVEMENT;
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"movement_type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(AdventureControl.CarefulMovementType.DEFAULT_MOVEMENT)]
@@ -5447,7 +5447,7 @@ namespace AdventureControl
   {
     public MenuContents() {}
     
-    [UnityEngine.SerializeField]
+
     private AdventureControl.AdvmodeMenu _current_menu = AdventureControl.AdvmodeMenu.Default;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"current_menu", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(AdventureControl.AdvmodeMenu.Default)]
@@ -5456,7 +5456,7 @@ namespace AdventureControl
       get { return _current_menu; }
       set { _current_menu = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<AdventureControl.MovementOption> _movements = new global::System.Collections.Generic.List<AdventureControl.MovementOption>();
     [global::ProtoBuf.ProtoMember(2, Name=@"movements", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<AdventureControl.MovementOption> movements
@@ -5474,7 +5474,7 @@ namespace AdventureControl
   {
     public MiscMoveParams() {}
     
-    [UnityEngine.SerializeField]
+
     private AdventureControl.MiscMoveType _type = AdventureControl.MiscMoveType.SET_CLIMB;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(AdventureControl.MiscMoveType.SET_CLIMB)]
@@ -5701,7 +5701,7 @@ namespace ItemdefInstrument
   {
     public InstrumentFlags() {}
     
-    [UnityEngine.SerializeField]
+
     private bool _indefinite_pitch = default(bool);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"indefinite_pitch", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5710,7 +5710,7 @@ namespace ItemdefInstrument
       get { return _indefinite_pitch; }
       set { _indefinite_pitch = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _placed_as_building = default(bool);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"placed_as_building", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5719,7 +5719,7 @@ namespace ItemdefInstrument
       get { return _placed_as_building; }
       set { _placed_as_building = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _metal_mat = default(bool);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"metal_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5728,7 +5728,7 @@ namespace ItemdefInstrument
       get { return _metal_mat; }
       set { _metal_mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _stone_mat = default(bool);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"stone_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5737,7 +5737,7 @@ namespace ItemdefInstrument
       get { return _stone_mat; }
       set { _stone_mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _wood_mat = default(bool);
     [global::ProtoBuf.ProtoMember(5, IsRequired = false, Name=@"wood_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5746,7 +5746,7 @@ namespace ItemdefInstrument
       get { return _wood_mat; }
       set { _wood_mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _glass_mat = default(bool);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"glass_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5755,7 +5755,7 @@ namespace ItemdefInstrument
       get { return _glass_mat; }
       set { _glass_mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _ceramic_mat = default(bool);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"ceramic_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5764,7 +5764,7 @@ namespace ItemdefInstrument
       get { return _ceramic_mat; }
       set { _ceramic_mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _shell_mat = default(bool);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"shell_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5773,7 +5773,7 @@ namespace ItemdefInstrument
       get { return _shell_mat; }
       set { _shell_mat = value; }
     }
-    [UnityEngine.SerializeField]
+
     private bool _bone_mat = default(bool);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"bone_mat", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(default(bool))]
@@ -5792,7 +5792,7 @@ namespace ItemdefInstrument
   {
     public InstrumentPiece() {}
     
-    [UnityEngine.SerializeField]
+
     private string _type = "";
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"type", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -5801,7 +5801,7 @@ namespace ItemdefInstrument
       get { return _type; }
       set { _type = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _id = "";
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"id", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -5810,7 +5810,7 @@ namespace ItemdefInstrument
       get { return _id; }
       set { _id = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name = "";
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"name", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -5819,7 +5819,7 @@ namespace ItemdefInstrument
       get { return _name; }
       set { _name = value; }
     }
-    [UnityEngine.SerializeField]
+
     private string _name_plural = "";
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"name_plural", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
@@ -5838,7 +5838,7 @@ namespace ItemdefInstrument
   {
     public InstrumentRegister() {}
     
-    [UnityEngine.SerializeField]
+
     private int _pitch_range_min = default(int);
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"pitch_range_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5847,7 +5847,7 @@ namespace ItemdefInstrument
       get { return _pitch_range_min; }
       set { _pitch_range_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pitch_range_max = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"pitch_range_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5866,7 +5866,7 @@ namespace ItemdefInstrument
   {
     public InstrumentDef() {}
     
-    [UnityEngine.SerializeField]
+
     private ItemdefInstrument.InstrumentFlags _flags = null;
     [global::ProtoBuf.ProtoMember(1, IsRequired = false, Name=@"flags", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue(null)]
@@ -5875,7 +5875,7 @@ namespace ItemdefInstrument
       get { return _flags; }
       set { _flags = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _size = default(int);
     [global::ProtoBuf.ProtoMember(2, IsRequired = false, Name=@"size", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5884,7 +5884,7 @@ namespace ItemdefInstrument
       get { return _size; }
       set { _size = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _value = default(int);
     [global::ProtoBuf.ProtoMember(3, IsRequired = false, Name=@"value", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5893,7 +5893,7 @@ namespace ItemdefInstrument
       get { return _value; }
       set { _value = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _material_size = default(int);
     [global::ProtoBuf.ProtoMember(4, IsRequired = false, Name=@"material_size", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5902,7 +5902,7 @@ namespace ItemdefInstrument
       get { return _material_size; }
       set { _material_size = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<ItemdefInstrument.InstrumentPiece> _pieces = new global::System.Collections.Generic.List<ItemdefInstrument.InstrumentPiece>();
     [global::ProtoBuf.ProtoMember(5, Name=@"pieces", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<ItemdefInstrument.InstrumentPiece> pieces
@@ -5910,7 +5910,7 @@ namespace ItemdefInstrument
       get { return _pieces; }
     }
   
-    [UnityEngine.SerializeField]
+
     private int _pitch_range_min = default(int);
     [global::ProtoBuf.ProtoMember(6, IsRequired = false, Name=@"pitch_range_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5919,7 +5919,7 @@ namespace ItemdefInstrument
       get { return _pitch_range_min; }
       set { _pitch_range_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _pitch_range_max = default(int);
     [global::ProtoBuf.ProtoMember(7, IsRequired = false, Name=@"pitch_range_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5928,7 +5928,7 @@ namespace ItemdefInstrument
       get { return _pitch_range_max; }
       set { _pitch_range_max = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _volume_mb_min = default(int);
     [global::ProtoBuf.ProtoMember(8, IsRequired = false, Name=@"volume_mb_min", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5937,7 +5937,7 @@ namespace ItemdefInstrument
       get { return _volume_mb_min; }
       set { _volume_mb_min = value; }
     }
-    [UnityEngine.SerializeField]
+
     private int _volume_mb_max = default(int);
     [global::ProtoBuf.ProtoMember(9, IsRequired = false, Name=@"volume_mb_max", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     [global::System.ComponentModel.DefaultValue(default(int))]
@@ -5946,7 +5946,7 @@ namespace ItemdefInstrument
       get { return _volume_mb_max; }
       set { _volume_mb_max = value; }
     }
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<ItemdefInstrument.SoundProductionType> _sound_production = new global::System.Collections.Generic.List<ItemdefInstrument.SoundProductionType>();
     [global::ProtoBuf.ProtoMember(10, Name=@"sound_production", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<ItemdefInstrument.SoundProductionType> sound_production
@@ -5954,7 +5954,7 @@ namespace ItemdefInstrument
       get { return _sound_production; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _sound_production_parm1 = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(11, Name=@"sound_production_parm1", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> sound_production_parm1
@@ -5962,7 +5962,7 @@ namespace ItemdefInstrument
       get { return _sound_production_parm1; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _sound_production_parm2 = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(12, Name=@"sound_production_parm2", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> sound_production_parm2
@@ -5970,7 +5970,7 @@ namespace ItemdefInstrument
       get { return _sound_production_parm2; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<ItemdefInstrument.PitchChoiceType> _pitch_choice = new global::System.Collections.Generic.List<ItemdefInstrument.PitchChoiceType>();
     [global::ProtoBuf.ProtoMember(13, Name=@"pitch_choice", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<ItemdefInstrument.PitchChoiceType> pitch_choice
@@ -5978,7 +5978,7 @@ namespace ItemdefInstrument
       get { return _pitch_choice; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _pitch_choice_parm1 = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(14, Name=@"pitch_choice_parm1", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> pitch_choice_parm1
@@ -5986,7 +5986,7 @@ namespace ItemdefInstrument
       get { return _pitch_choice_parm1; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _pitch_choice_parm2 = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(15, Name=@"pitch_choice_parm2", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> pitch_choice_parm2
@@ -5994,7 +5994,7 @@ namespace ItemdefInstrument
       get { return _pitch_choice_parm2; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<ItemdefInstrument.TuningType> _tuning = new global::System.Collections.Generic.List<ItemdefInstrument.TuningType>();
     [global::ProtoBuf.ProtoMember(16, Name=@"tuning", DataFormat = global::ProtoBuf.DataFormat.TwosComplement)]
     public global::System.Collections.Generic.List<ItemdefInstrument.TuningType> tuning
@@ -6002,7 +6002,7 @@ namespace ItemdefInstrument
       get { return _tuning; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<string> _tuning_parm = new global::System.Collections.Generic.List<string>();
     [global::ProtoBuf.ProtoMember(17, Name=@"tuning_parm", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<string> tuning_parm
@@ -6010,7 +6010,7 @@ namespace ItemdefInstrument
       get { return _tuning_parm; }
     }
   
-    [UnityEngine.SerializeField]
+
     private global::System.Collections.Generic.List<ItemdefInstrument.InstrumentRegister> _registers = new global::System.Collections.Generic.List<ItemdefInstrument.InstrumentRegister>();
     [global::ProtoBuf.ProtoMember(18, Name=@"registers", DataFormat = global::ProtoBuf.DataFormat.Default)]
     public global::System.Collections.Generic.List<ItemdefInstrument.InstrumentRegister> registers
@@ -6018,7 +6018,7 @@ namespace ItemdefInstrument
       get { return _registers; }
     }
   
-    [UnityEngine.SerializeField]
+
     private string _description = "";
     [global::ProtoBuf.ProtoMember(19, IsRequired = false, Name=@"description", DataFormat = global::ProtoBuf.DataFormat.Default)]
     [global::System.ComponentModel.DefaultValue("")]
