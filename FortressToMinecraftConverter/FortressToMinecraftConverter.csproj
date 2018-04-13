@@ -89,6 +89,8 @@
     <Compile Include="RemoteClientDF-net\DFHack\RpcMessageHeader.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\SDLKeycodes.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\Tools.cs" />
+    <Compile Include="Tile.cs" />
+    <Compile Include="Tile3DArrayConverter.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

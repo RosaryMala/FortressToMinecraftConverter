@@ -4,16 +4,39 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FortressToMinecraftConverter"
+        xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         mc:Ignorable="d"
         Title="Fortress To Minecraft" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="TileTemplate">
+            <Label Content="{Binding Path=TileType.shape}" Width="20" Height="20"/>
+        </DataTemplate>
+        <DataTemplate x:Key="TileRowTemplate">
+            <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource TileTemplate}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+            </ItemsControl>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10">
-            <Button x:Name="readMapButton" Content="Read Map"/>
+            <Button x:Name="readMapButton" Content="Read Map" Click="readMapButton_Click"/>
         </StackPanel>
+        <ListBox x:Name="zList" Grid.Column="1" Margin="0,10,10,10" HorizontalAlignment="Right" Width="100" ItemsSource="{Binding Tiles}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Count}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ItemsControl  Grid.Column="1"  Margin="10,10,115,10" ItemsSource="{Binding ElementName=zList, Path=SelectedItem}" ItemTemplate="{DynamicResource TileRowTemplate}"/>
 
     </Grid>
 </Window>

@@ -20,9 +20,18 @@ namespace FortressToMinecraftConverter
     /// </summary>
     public partial class MainWindow : Window
     {
+        MapReader mapReader;
+
         public MainWindow()
         {
             InitializeComponent();
+            mapReader = new MapReader();
+            this.DataContext = mapReader;
+        }
+
+        private void readMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            mapReader.ReadMap();
         }
     }
 }
