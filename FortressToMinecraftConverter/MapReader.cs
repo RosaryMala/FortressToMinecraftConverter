@@ -20,7 +20,7 @@ namespace FortressToMinecraftConverter
         private RemoteFunction<EmptyMessage, TiletypeList> tileTypeListCall;
         private RemoteFunction<BlockRequest, BlockList> mapReadCall;
         private RemoteFunction<EmptyMessage> mapResetCall;
-        public Tile[][][] Tiles { get; set; }
+        public ZLevel[] Tiles { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -69,7 +69,7 @@ namespace FortressToMinecraftConverter
             request.blocks_needed = info.block_size_x * info.block_size_y * info.block_size_z;
             var blocks = mapReadCall.Execute(request);
 
-            Tiles = new Tile[info.block_size_z][][];
+            Tiles = new ZLevel[info.block_size_z];
 
             foreach (var block in blocks.map_blocks)
             {
@@ -82,10 +82,8 @@ namespace FortressToMinecraftConverter
                         int z = block.map_z;
                         var tile = new Tile();
                         if (Tiles[z] == null)
-                            Tiles[z] = new Tile[info.block_size_y * BlockSize][];
-                        if(Tiles[z][y] == null)
-                            Tiles[z][y] = new Tile[info.block_size_x * BlockSize];
-                        Tiles[z][y][x] = tile;
+                            Tiles[z] = new ZLevel(info.block_size_x * BlockSize, info.block_size_y * BlockSize);
+                        Tiles[z][x, y] = tile;
                         if (block.tiles.Count > 0)
                             tile.TileType = tileTypes.tiletype_list[block.tiles[index]];
                         if (block.water.Count > 0)

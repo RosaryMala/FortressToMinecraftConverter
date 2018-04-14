@@ -8,35 +8,36 @@
         mc:Ignorable="d"
         Title="Fortress To Minecraft" Height="450" Width="800">
     <Window.Resources>
-        <DataTemplate x:Key="TileTemplate">
-            <Label Content="{Binding Path=TileType.shape}" Width="20" Height="20"/>
-        </DataTemplate>
-        <DataTemplate x:Key="TileRowTemplate">
-            <ItemsControl ItemsSource="{Binding}" ItemTemplate="{DynamicResource TileTemplate}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-            </ItemsControl>
-        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10">
             <Button x:Name="readMapButton" Content="Read Map" Click="readMapButton_Click"/>
         </StackPanel>
-        <ListBox x:Name="zList" Grid.Column="1" Margin="0,10,10,10" HorizontalAlignment="Right" Width="100" ItemsSource="{Binding Tiles}">
+        <ListBox x:Name="zList" Grid.Column="2" Margin="10,10,10,10" ItemsSource="{Binding Tiles}">
+            <ListBox.LayoutTransform>
+                <ScaleTransform ScaleY="-1"/>
+            </ListBox.LayoutTransform>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Label Content="{Binding Count}"/>
+                    <Grid Height="20" Margin="2" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+                        <Grid.LayoutTransform>
+                            <ScaleTransform ScaleY="-1"/>
+                        </Grid.LayoutTransform>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding BitmapSource}" Stretch="Fill" Margin="0,0,0,0"/>
+                        <CheckBox Grid.Column="1" x:Name="levelEnabled" Margin="2,2,2,2" IsChecked="{Binding Enabled}"/>
+                    </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ItemsControl  Grid.Column="1"  Margin="10,10,115,10" ItemsSource="{Binding ElementName=zList, Path=SelectedItem}" ItemTemplate="{DynamicResource TileRowTemplate}"/>
-
+        <Image x:Name="image" Grid.Column="1" Margin="10,10,115,10" Source="{Binding ElementName=zList, Path=SelectedItem.BitmapSource}" RenderOptions.BitmapScalingMode="NearestNeighbor" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
