@@ -10,6 +10,10 @@
     <Window.Resources>
     </Window.Resources>
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
@@ -23,19 +27,23 @@
                 <RowDefinition/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ListBox x:Name="zList"  Margin="10" ItemsSource="{Binding Tiles}" SelectionMode="Extended" MinWidth="50" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListBox x:Name="zList"  Margin="10,10,10,2" ItemsSource="{Binding Tiles}" SelectionMode="Extended" MinWidth="50" ScrollViewer.VerticalScrollBarVisibility="Visible" Width="132">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Height="40" Margin="2" Orientation="Horizontal">
-                            <TextBlock Text="{Binding Level}" Margin="2"/>
-                            <Image Source="{Binding BitmapSource}" Stretch="Fill" Margin="0,0,0,0"/>
+                        <StackPanel Margin="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <TextBlock Text="{Binding Level}" Margin="2" Width="20" TextAlignment="Right"/>
+                            <Image Source="{Binding BitmapSource}" Stretch="Uniform" Margin="2" Width="40" Height="40"/>
                             <CheckBox x:Name="levelEnabled" Margin="2" IsChecked="{Binding Enabled}" Click="levelEnabled_Click"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedLevelsString}" VerticalAlignment="Center"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10,5,10,10" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedLevelsString}" VerticalAlignment="Center"/>
         </Grid>
-        <Image x:Name="image" Grid.Column="1" Margin="10,10,115,10" Source="{Binding ElementName=zList, Path=SelectedItem.BitmapSource}" RenderOptions.BitmapScalingMode="NearestNeighbor" Grid.ColumnSpan="2"/>
+        <Image x:Name="image" Grid.Column="1" Margin="10,10,45,10" Source="{Binding ElementName=zList, Path=SelectedItem.BitmapSource}" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+        <StackPanel Margin="10" Grid.Row="1" Grid.ColumnSpan="3">
+            <TextBlock x:Name="progressText" Margin="0,0,0,5"/>
+            <ProgressBar x:Name="progressBar" Margin="0,5,0,0" Height="10"/>
+        </StackPanel>
     </Grid>
 </Window>

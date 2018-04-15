@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using DFHack;
+﻿using DFHack;
 using dfproto;
 using RemoteFortressReader;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Substrate;
 
 namespace FortressToMinecraftConverter
 {
@@ -45,17 +43,23 @@ namespace FortressToMinecraftConverter
             
         }
 
-        public void ReadMap()
+        public void ReadMap(object sender, DoWorkEventArgs e)
         {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            worker.ReportProgress(0, "Connecting to DF");
+
             if (!isConnected)
             {
                 if (!ConnectToDF())
                 {
                     isConnected = false;
+                    worker.ReportProgress(0, "Could not connect to DF.");
                     return;
                 }
                 isConnected = true;
             }
+            worker.ReportProgress(0, "Connected!");
 
             mapResetCall.Execute();
 
@@ -66,6 +70,7 @@ namespace FortressToMinecraftConverter
             var materials = materialListCall.Execute();
 
             Dictionary<MatPairStruct, MaterialDefinition> matLookup = new Dictionary<MatPairStruct, MaterialDefinition>();
+
 
             foreach (var item in materials.material_list)
             {
@@ -79,6 +84,8 @@ namespace FortressToMinecraftConverter
                 Tiles[i].PropertyChanged += LevelToggleEvent;
             }
 
+            int totalColumns = info.block_size_x * info.block_size_y;
+            int done = 0;
             for (int column_y = 0; column_y < info.block_size_y; column_y++)
                 for (int column_x = 0; column_x < info.block_size_x; column_x++)
                 {
@@ -121,16 +128,24 @@ namespace FortressToMinecraftConverter
 
                             }
                     }
-
+                    done++;
+                    worker.ReportProgress(done * 100 / totalColumns, "Reading map from DF.");
                 }
 
-            foreach (var level in Tiles)
+            for(int i = 0; i < Tiles.Length; i++)
             {
-                level.EnableIfImportant();
+                Tiles[i].EnableIfImportant();
+                worker.ReportProgress(i * 100 / Tiles.Length, "Finding useful levels.");
             }
+            for (int i = 0; i < Tiles.Length; i++)
+            {
+                Tiles[i].RegenerateBitmap();
+                worker.ReportProgress(i * 100 / Tiles.Length, "Building Preview Images");
+            }
+            worker.ReportProgress(100, "Done! Ready to export.");
 
-            PropertyChanged(this, new PropertyChangedEventArgs("Tiles"));
-            Console.WriteLine("Done!");
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tiles"));
+            e.Result = this;
         }
 
         private void LevelToggleEvent(object sender, PropertyChangedEventArgs e)
@@ -168,6 +183,11 @@ namespace FortressToMinecraftConverter
             {
                 return string.Format("{0}/{1}", NumSelectedLevels, 256 / 3);
             }
+        }
+
+        public void ExportMap(string path)
+        {
+            AnvilWorld world = AnvilWorld.Create(path);
         }
     }
 }

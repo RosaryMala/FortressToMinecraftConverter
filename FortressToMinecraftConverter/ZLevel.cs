@@ -78,7 +78,7 @@ namespace FortressToMinecraftConverter
             }
         }
 
-        private void RegenerateBitmap()
+        internal void RegenerateBitmap()
         {
             byte[] pixels = new byte[Width * Height * 4];
             for (int y = 0; y < Height; y++)
@@ -97,6 +97,7 @@ namespace FortressToMinecraftConverter
                 }
             }
             bitmapSource = BitmapSource.Create(Width, Height, DPI, DPI, PixelFormats.Bgra32, null, pixels, Width * 4);
+            bitmapSource.Freeze();
             dirty = false;
         }
 

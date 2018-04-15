@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FortressToMinecraftConverter
 {
@@ -26,14 +14,30 @@ namespace FortressToMinecraftConverter
         public MainWindow()
         {
             InitializeComponent();
-            mapReader = new MapReader();
-            this.DataContext = mapReader;
             zList.Items.SortDescriptions.Add(new SortDescription("Level", ListSortDirection.Descending));
         }
 
         private void readMapButton_Click(object sender, RoutedEventArgs e)
         {
-            mapReader.ReadMap();
+            var reader = new MapReader();
+            BackgroundWorker readMapWorker = new BackgroundWorker();
+            readMapWorker.WorkerReportsProgress = true;
+            readMapWorker.DoWork += reader.ReadMap;
+            readMapWorker.ProgressChanged += ReadMapWorker_ProgressChanged;
+            readMapWorker.RunWorkerCompleted += ReadMapWorker_RunWorkerCompleted;
+            readMapWorker.RunWorkerAsync();
+        }
+
+        private void ReadMapWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            mapReader = e.Result as MapReader;
+            this.DataContext = mapReader;
+        }
+
+        private void ReadMapWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progressBar.Value = e.ProgressPercentage;
+            progressText.Text = e.UserState.ToString();
         }
 
         private void levelEnabled_Click(object sender, RoutedEventArgs e)
