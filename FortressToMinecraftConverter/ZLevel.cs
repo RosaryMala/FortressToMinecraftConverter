@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using Substrate;
 
 namespace FortressToMinecraftConverter
 {
@@ -31,6 +32,27 @@ namespace FortressToMinecraftConverter
                 tiles[x, y] = value;
                 dirty = true;
             }
+        }
+
+        /// <summary>
+        /// Gets a minecraft block from this level, in minecraft coordinates.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        /// <returns></returns>
+        public AlphaBlock GetBlock(int x, int y, int z)
+        {
+            int dfX = x / 3;
+            int dfY = Width - 1 - (z / 3);
+            var tile = this[dfX, dfY];
+            if (tile == null)
+                return new AlphaBlock(0);
+            if (y == 0 && tile.BottomSolid)
+                return new AlphaBlock(1);
+            if (y > 0 && tile.TopSolid)
+                return new AlphaBlock(1);
+            return new AlphaBlock(0);
         }
 
         private bool _enabled;

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -19,9 +21,12 @@ namespace FortressToMinecraftConverter
 
         private void ReadMapButton_Click(object sender, RoutedEventArgs e)
         {
+            readMapButton.IsEnabled = false;
             var reader = new MapReader();
-            BackgroundWorker readMapWorker = new BackgroundWorker();
-            readMapWorker.WorkerReportsProgress = true;
+            BackgroundWorker readMapWorker = new BackgroundWorker
+            {
+                WorkerReportsProgress = true
+            };
             readMapWorker.DoWork += reader.ReadMap;
             readMapWorker.ProgressChanged += ReadMapWorker_ProgressChanged;
             readMapWorker.RunWorkerCompleted += ReadMapWorker_RunWorkerCompleted;
@@ -33,6 +38,7 @@ namespace FortressToMinecraftConverter
             mapReader = e.Result as MapReader;
             this.DataContext = mapReader;
             exportMapButton.IsEnabled = true;
+            readMapButton.IsEnabled = true;
         }
 
         private void ReadMapWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -54,13 +60,16 @@ namespace FortressToMinecraftConverter
             string path;
             using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
             {
+                dialog.SelectedPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), ".minecraft", "saves");
                 System.Windows.Forms.DialogResult result = dialog.ShowDialog();
                 if (result != System.Windows.Forms.DialogResult.OK)
                     return;
                 path = dialog.SelectedPath;
             }
-            BackgroundWorker exportWorker = new BackgroundWorker();
-            exportWorker.WorkerReportsProgress = true;
+            BackgroundWorker exportWorker = new BackgroundWorker
+            {
+                WorkerReportsProgress = true
+            };
             exportWorker.DoWork += mapReader.ExportMap;
             exportWorker.ProgressChanged += ReadMapWorker_ProgressChanged;
             exportWorker.RunWorkerCompleted += ExportWorker_RunWorkerCompleted;
@@ -69,7 +78,7 @@ namespace FortressToMinecraftConverter
 
         private void ExportWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            
+            Console.WriteLine("Exported.");
         }
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Substrate</name>
+        <name>Substrate.net40-client</name>
     </assembly>
     <members>
         <member name="T:Substrate.AlphaChunk">
@@ -1417,10 +1417,11 @@
         </member>
         <member name="M:Substrate.Core.IRegionContainer.GetRegion(System.Int32,System.Int32)">
             <summary>
-            Gets an <see cref="T:Substrate.Core.IRegion"/> for the given region filename.
+            Gets the region at the given coordinates.
             </summary>
-            <param name="filename">The filename of the region to get.</param>
-            <returns>A <see cref="T:Substrate.Core.IRegion"/> corresponding to the coordinates encoded in the filename.</returns>
+            <param name="rx">The global X-coordinate of a region.</param>
+            <param name="rz">The global Z-coordinate of a region.</param>
+            <returns>The <see cref="T:Substrate.Core.IRegion"/> object for the given coordinates, or null if none exists.</returns>
         </member>
         <member name="M:Substrate.Core.IRegionContainer.CreateRegion(System.Int32,System.Int32)">
             <summary>
@@ -2830,31 +2831,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Substrate.Entities.ActiveEffects">
-            <summary>
-            Encompasses data in the "ActiveEffects" compound attribute of mob entity types, used to specify potion effects
-            </summary>
-        </member>
-        <member name="P:Substrate.Entities.ActiveEffects.Id">
-            <summary>
-            Gets or sets the ID of the potion effect type.
-            </summary>
-        </member>
-        <member name="P:Substrate.Entities.ActiveEffects.Amplifier">
-            <summary>
-            Gets or sets the amplification of the potion effect.
-            </summary>
-        </member>
-        <member name="P:Substrate.Entities.ActiveEffects.Duration">
-            <summary>
-            Gets or sets the remaining duration of the potion effect.
-            </summary>
-        </member>
-        <member name="P:Substrate.Entities.ActiveEffects.IsValid">
-            <summary>
-            Determine if the combination of properties in this ActiveEffects is valid.
-            </summary>
-        </member>
         <member name="T:Substrate.ImportExport.Schematic">
             <summary>
             Provides import and export support for the 3rd party schematic file format.
@@ -2929,7 +2905,7 @@
             </summary>
             <param name="slot">The item slot to query or insert an item or item stack into.</param>
         </member>
-        <member name="P:Substrate.ItemCollection.Schema">
+        <member name="P:Substrate.ItemCollection.ItemSchema">
             <summary>
             Gets a <see cref="T:Substrate.Nbt.SchemaNode"/> representing the schema of an item collection.
             </summary>
@@ -3238,6 +3214,11 @@
             Gets the id of the item type.
             </summary>
         </member>
+        <member name="P:Substrate.ItemInfo.NameID">
+            <summary>
+            Gets the name of the item type.
+            </summary>
+        </member>
         <member name="P:Substrate.ItemInfo.Name">
             <summary>
             Gets the name of the item type.
@@ -3246,6 +3227,7 @@
         <member name="P:Substrate.ItemInfo.StackSize">
             <summary>
             Gets the maximum stack size allowed for this item type.
+            A stack size between 1 and 64, inclusive.
             </summary>
         </member>
         <member name="M:Substrate.ItemInfo.#ctor(System.Int32)">
@@ -3254,19 +3236,13 @@
             </summary>
             <param name="id">The id of an item type.</param>
         </member>
-        <member name="M:Substrate.ItemInfo.#ctor(System.Int32,System.String)">
+        <member name="M:Substrate.ItemInfo.#ctor(System.Int32,System.String,System.String)">
             <summary>
             Constructs a new <see cref="T:Substrate.ItemInfo"/> record for the given item id and name.
             </summary>
             <param name="id">The id of an item type.</param>
+            <param name="nameId">The name id of an item type</param>
             <param name="name">The name of an item type.</param>
-        </member>
-        <member name="M:Substrate.ItemInfo.SetStackSize(System.Int32)">
-            <summary>
-            Sets the maximum stack size for this item type.
-            </summary>
-            <param name="stack">A stack size between 1 and 64, inclusive.</param>
-            <returns>The object instance used to invoke this method.</returns>
         </member>
         <member name="M:Substrate.ItemInfo.GetRandomItem">
             <summary>
@@ -3311,7 +3287,7 @@
             <param name="ent">The <see cref="T:Substrate.TypedEntity"/> object to add.</param>
             <remarks>It is up to the developer to ensure that the <see cref="T:Substrate.TypedEntity"/> being added to the collection has a position that
             is within acceptable range of the collection.  <see cref="T:Substrate.EntityCollection"/> transparently back other objects such as 
-            <see cref="!:IChunk"/> objects, which have a well-defined position in global space.  The <see cref="T:Substrate.EntityCollection"/> itself has
+            <see cref="T:Substrate.Core.IChunk"/> objects, which have a well-defined position in global space.  The <see cref="T:Substrate.EntityCollection"/> itself has
             no concept of position and will not enforce constraints on the positions of <see cref="T:Substrate.TypedEntity"/> objects being added.</remarks>
         </member>
         <member name="M:Substrate.EntityCollection.RemoveAll(System.String)">
@@ -3665,6 +3641,36 @@
             Gets or sets whether mobs can destroy blocks (creeper explosions, zombies breaking doors, etc.).
             </summary>
         </member>
+        <member name="P:Substrate.GameRules.DoDaylightCycle">
+            <summary>
+            Whether to do the Daylight Cycle or not. True by default.
+            </summary>
+        </member>
+        <member name="P:Substrate.GameRules.LogAdminCommands">
+            <summary>
+            Whether to log admin commands to server log. True by default.
+            </summary>
+        </member>
+        <member name="P:Substrate.GameRules.NaturalRegeneration">
+            <summary>
+            Whether the player naturally regenerates health if hunger is high enough. True by default.
+            </summary>
+        </member>
+        <member name="P:Substrate.GameRules.RandomTickSpeed">
+            <summary>
+            How often a random tick occurs, such as plant growth, leaf decay, etc. 3 by default.
+            </summary>
+        </member>
+        <member name="P:Substrate.GameRules.SendCommandFeedback">
+            <summary>
+            Whether the feedback from commands executed by a player should show up in chat. True by default.
+            </summary>
+        </member>
+        <member name="P:Substrate.GameRules.ShowDeathMessages">
+            <summary>
+            Whether a message appears in chat when a player dies. True by default.
+            </summary>
+        </member>
         <member name="M:Substrate.GameRules.Copy">
             <inheritdoc />
         </member>
@@ -3681,6 +3687,16 @@
         <member name="F:Substrate.GameType.CREATIVE">
             <summary>
             The world will be played in Creative mode.
+            </summary>
+        </member>
+        <member name="F:Substrate.GameType.ADVENTURE">
+            <summary>
+            The world will be played in Adventure mode.
+            </summary>
+        </member>
+        <member name="F:Substrate.GameType.SPECTATOR">
+            <summary>
+            The world will be played in Spectator mode.
             </summary>
         </member>
         <member name="T:Substrate.Level">
@@ -3989,6 +4005,24 @@
             </summary>
             <returns>A <see cref="T:Substrate.Data.DataManager"/> for the given dimension in the world.</returns>
         </member>
+        <member name="T:Substrate.Nbt.INbtObject2">
+            <summary>
+            Defines methods for loading or extracting an NBT tree.
+            </summary>
+        </member>
+        <member name="M:Substrate.Nbt.INbtObject2.LoadTree(Substrate.Nbt.TagNode)">
+            <summary>
+            Attempt to load an NBT tree into the object without validation.
+            </summary>
+            <param name="tree">The root node of an NBT tree.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Nbt.INbtObject2.BuildTree">
+            <summary>
+            Builds an NBT tree from the object's data.
+            </summary>
+            <returns>The root node of an NBT tree representing the object's data.</returns>
+        </member>
         <member name="T:Substrate.Nbt.INbtObject`1">
             <summary>
             Defines methods for loading or extracting an NBT tree.
@@ -4168,12 +4202,13 @@
             </summary>
             <param name="tagName">The expected name of a <see cref="T:Substrate.Nbt.TagNode"/>.</param>
         </member>
-        <member name="M:Substrate.Nbt.TagEventArgs.#ctor(System.String,Substrate.Nbt.TagNode)">
+        <member name="M:Substrate.Nbt.TagEventArgs.#ctor(System.String,Substrate.Nbt.TagNode,Substrate.Nbt.TagNode)">
             <summary>
             Constructs a new event argument set.
             </summary>
             <param name="tagName">The expected name of a <see cref="T:Substrate.Nbt.TagNode"/>.</param>
             <param name="tag">The <see cref="T:Substrate.Nbt.TagNode"/> involved in this event.</param>
+            <param name="parent">The optional parent of tag.</param>
         </member>
         <member name="M:Substrate.Nbt.TagEventArgs.#ctor(Substrate.Nbt.SchemaNode,Substrate.Nbt.TagNode)">
             <summary>
@@ -4181,6 +4216,14 @@
             </summary>
             <param name="schema">The <see cref="T:Substrate.Nbt.SchemaNode"/> corresponding to the <see cref="T:Substrate.Nbt.TagNode"/> involved in this event.</param>
             <param name="tag">The <see cref="T:Substrate.Nbt.TagNode"/> involved in this event.</param>
+        </member>
+        <member name="M:Substrate.Nbt.TagEventArgs.#ctor(System.String,Substrate.Nbt.SchemaNode,Substrate.Nbt.TagNode)">
+            <summary>
+            Constructs a new event argument set.
+            </summary>
+            <param name="tagName">The unexpected name of a <see cref="T:Substrate.Nbt.TagNode"/>.</param>
+            <param name="schema">The <see cref="T:Substrate.Nbt.SchemaNode"/> corresponding to the <see cref="T:Substrate.Nbt.TagNode"/> involved in this event.</param>
+            <param name="parent">The optional parent of tag.</param>
         </member>
         <member name="T:Substrate.Nbt.VerifierEventHandler">
             <summary>
@@ -4197,6 +4240,11 @@
         <member name="E:Substrate.Nbt.NbtVerifier.MissingTag">
             <summary>
             An event that gets fired whenever an expected <see cref="T:Substrate.Nbt.TagNode"/> is not found.
+            </summary>
+        </member>
+        <member name="E:Substrate.Nbt.NbtVerifier.UnexpectedTag">
+            <summary>
+            An event that gets fired whenever an unexpected <see cref="T:Substrate.Nbt.TagNode"/> is found.
             </summary>
         </member>
         <member name="E:Substrate.Nbt.NbtVerifier.InvalidTagType">
@@ -4229,6 +4277,13 @@
             <param name="e">Arguments for this event.</param>
             <returns>Status indicating whether this event can be ignored.</returns>
         </member>
+        <member name="M:Substrate.Nbt.NbtVerifier.OnUnexpectedTag(Substrate.Nbt.TagEventArgs)">
+            <summary>
+            Processes registered events for <see cref="E:Substrate.Nbt.NbtVerifier.UnexpectedTag"/> whenever an unexpected <see cref="T:Substrate.Nbt.TagNode"/> is found.
+            </summary>
+            <param name="e">Arguments for this event.</param>
+            <returns>Status indicating whether this event can be ignored.</returns>
+        </member>
         <member name="M:Substrate.Nbt.NbtVerifier.OnInvalidTagType(Substrate.Nbt.TagEventArgs)">
             <summary>
             Processes registered events for <see cref="E:Substrate.Nbt.NbtVerifier.InvalidTagType"/> whenever an expected <see cref="T:Substrate.Nbt.TagNode"/> is of the wrong type and cannot be cast.
@@ -4253,22 +4308,29 @@
             Gets the name of an expected NBT node.
             </summary>
         </member>
+        <member name="P:Substrate.Nbt.SchemaNode.Type">
+            <summary>
+            Gets the scalar <see cref="T:Substrate.Nbt.TagType"/> that this node represents.
+            </summary>
+        </member>
         <member name="P:Substrate.Nbt.SchemaNode.Options">
             <summary>
             Gets additional schema options defined for this node.
             </summary>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNode.#ctor(System.String)">
+        <member name="M:Substrate.Nbt.SchemaNode.#ctor(System.String,Substrate.Nbt.TagType)">
             <summary>
             Constructs a new <see cref="T:Substrate.Nbt.SchemaNode"/> representing a <see cref="T:Substrate.Nbt.TagNode"/> named <paramref name="name"/>.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>.</param>
+            <param name="type">The type of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNode.#ctor(System.String,Substrate.Nbt.SchemaOptions)">
+        <member name="M:Substrate.Nbt.SchemaNode.#ctor(System.String,Substrate.Nbt.TagType,Substrate.Nbt.SchemaOptions)">
             <summary>
             Constructs a new <see cref="T:Substrate.Nbt.SchemaNode"/> with additional options.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>.</param>
+            <param name="type">The type of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>.</param>
             <param name="options">One or more option flags modifying the processing of this node.</param>
         </member>
         <member name="M:Substrate.Nbt.SchemaNode.BuildDefaultTree">
@@ -4277,50 +4339,50 @@
             </summary>
             <returns>A <see cref="T:Substrate.Nbt.TagNode"/> that is valid for this schema node.</returns>
         </member>
-        <member name="T:Substrate.Nbt.SchemaNodeArray">
+        <member name="T:Substrate.Nbt.SchemaNodeByteArray">
             <summary>
             A concrete <see cref="T:Substrate.Nbt.SchemaNode"/> representing a <see cref="T:Substrate.Nbt.TagNodeByteArray"/>.
             </summary>
         </member>
-        <member name="P:Substrate.Nbt.SchemaNodeArray.Length">
+        <member name="P:Substrate.Nbt.SchemaNodeByteArray.Length">
             <summary>
             Gets the expected length of the corresponding byte array.
             </summary>
         </member>
-        <member name="P:Substrate.Nbt.SchemaNodeArray.HasExpectedLength">
+        <member name="P:Substrate.Nbt.SchemaNodeByteArray.HasExpectedLength">
             <summary>
             Indicates whether there is an expected length of the corresponding byte array.
             </summary>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeArray.#ctor(System.String)">
+        <member name="M:Substrate.Nbt.SchemaNodeByteArray.#ctor(System.String)">
             <summary>
-            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeArray"/> representing a <see cref="T:Substrate.Nbt.TagNodeByteArray"/> named <paramref name="name"/>.
+            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeByteArray"/> representing a <see cref="T:Substrate.Nbt.TagNodeByteArray"/> named <paramref name="name"/>.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNodeByteArray"/>.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeArray.#ctor(System.String,Substrate.Nbt.SchemaOptions)">
+        <member name="M:Substrate.Nbt.SchemaNodeByteArray.#ctor(System.String,Substrate.Nbt.SchemaOptions)">
             <summary>
-            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeArray"/> with additional options.
+            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeByteArray"/> with additional options.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNodeByteArray"/>.</param>
             <param name="options">One or more option flags modifying the processing of this node.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeArray.#ctor(System.String,System.Int32)">
+        <member name="M:Substrate.Nbt.SchemaNodeByteArray.#ctor(System.String,System.Int32)">
             <summary>
-            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeArray"/> representing a <see cref="T:Substrate.Nbt.TagNodeByteArray"/> named <paramref name="name"/> with expected length <paramref name="length"/>.
+            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeByteArray"/> representing a <see cref="T:Substrate.Nbt.TagNodeByteArray"/> named <paramref name="name"/> with expected length <paramref name="length"/>.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNodeByteArray"/>.</param>
             <param name="length">The expected length of corresponding byte array.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeArray.#ctor(System.String,System.Int32,Substrate.Nbt.SchemaOptions)">
+        <member name="M:Substrate.Nbt.SchemaNodeByteArray.#ctor(System.String,System.Int32,Substrate.Nbt.SchemaOptions)">
             <summary>
-            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeArray"/> with additional options.
+            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeByteArray"/> with additional options.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNodeByteArray"/>.</param>
             <param name="length">The expected length of corresponding byte array.</param>
             <param name="options">One or more option flags modifying the processing of this node.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeArray.BuildDefaultTree">
+        <member name="M:Substrate.Nbt.SchemaNodeByteArray.BuildDefaultTree">
             <summary>
             Constructs a default <see cref="T:Substrate.Nbt.TagNodeByteArray"/> satisfying the constraints of this node.
             </summary>
@@ -4496,12 +4558,12 @@
             Gets the expected number of items contained in the corresponding <see cref="T:Substrate.Nbt.TagNodeList"/>.
             </summary>
         </member>
-        <member name="P:Substrate.Nbt.SchemaNodeList.Type">
+        <member name="P:Substrate.Nbt.SchemaNodeList.ItemType">
             <summary>
             Gets the expected <see cref="T:Substrate.Nbt.TagType"/> of the items contained in the corresponding <see cref="T:Substrate.Nbt.TagNodeList"/>.
             </summary>
         </member>
-        <member name="P:Substrate.Nbt.SchemaNodeList.SubSchema">
+        <member name="P:Substrate.Nbt.SchemaNodeList.ItemSchema">
             <summary>
             Gets a <see cref="T:Substrate.Nbt.SchemaNode"/> representing a schema that items contained in the corresponding <see cref="T:Substrate.Nbt.TagNodeList"/> should be verified against.
             </summary>
@@ -4585,32 +4647,27 @@
             </summary>
             <returns>A <see cref="T:Substrate.Nbt.TagNodeList"/> with a sensible default value.  If a length is specified, default child <see cref="T:Substrate.Nbt.TagNode"/> objects of the necessary type will be created and added to the <see cref="T:Substrate.Nbt.TagNodeList"/>.</returns>
         </member>
-        <member name="T:Substrate.Nbt.SchemaNodeScaler">
+        <member name="T:Substrate.Nbt.SchemaNodeScalar">
             <summary>
-            A concrete <see cref="T:Substrate.Nbt.SchemaNode"/> representing a scaler-type <see cref="T:Substrate.Nbt.TagNode"/>.
+            A concrete <see cref="T:Substrate.Nbt.SchemaNode"/> representing a scalar-type <see cref="T:Substrate.Nbt.TagNode"/>.
             </summary>
         </member>
-        <member name="P:Substrate.Nbt.SchemaNodeScaler.Type">
+        <member name="M:Substrate.Nbt.SchemaNodeScalar.#ctor(System.String,Substrate.Nbt.TagType)">
             <summary>
-            Gets the scaler <see cref="T:Substrate.Nbt.TagType"/> that this node represents.
-            </summary>
-        </member>
-        <member name="M:Substrate.Nbt.SchemaNodeScaler.#ctor(System.String,Substrate.Nbt.TagType)">
-            <summary>
-            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeScaler"/> representing a <see cref="T:Substrate.Nbt.TagNode"/> named <paramref name="name"/> and of type <paramref name="type"/>.
+            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeScalar"/> representing a <see cref="T:Substrate.Nbt.TagNode"/> named <paramref name="name"/> and of type <paramref name="type"/>.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>.</param>
-            <param name="type">The type of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>, restricted to scaler types.</param>
+            <param name="type">The type of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>, restricted to scalar types.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeScaler.#ctor(System.String,Substrate.Nbt.TagType,Substrate.Nbt.SchemaOptions)">
+        <member name="M:Substrate.Nbt.SchemaNodeScalar.#ctor(System.String,Substrate.Nbt.TagType,Substrate.Nbt.SchemaOptions)">
             <summary>
-            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeScaler"/> with additional options.
+            Constructs a new <see cref="T:Substrate.Nbt.SchemaNodeScalar"/> with additional options.
             </summary>
             <param name="name">The name of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>.</param>
-            <param name="type">The type of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>, restricted to scaler types.</param>
+            <param name="type">The type of the corresponding <see cref="T:Substrate.Nbt.TagNode"/>, restricted to scalar types.</param>
             <param name="options">One or more option flags modifying the processing of this node.</param>
         </member>
-        <member name="M:Substrate.Nbt.SchemaNodeScaler.BuildDefaultTree">
+        <member name="M:Substrate.Nbt.SchemaNodeScalar.BuildDefaultTree">
             <summary>
             Constructs a default <see cref="T:Substrate.Nbt.TagNode"/> according to the <see cref="T:Substrate.Nbt.TagType"/> this node represents.
             </summary>
@@ -6083,6 +6140,11 @@
             An NBT node representing a signed byte tag type.
             </summary>
         </member>
+        <member name="P:Substrate.Nbt.TagNodeByte.Data">
+            <summary>
+            Gets or sets a byte of tag data.
+            </summary>
+        </member>
         <member name="M:Substrate.Nbt.TagNodeByte.ToTagByte">
             <summary>
             Converts the node to itself.
@@ -6120,17 +6182,18 @@
             <param name="type">An NBT tag type.</param>
             <returns>Status indicating whether this object could be cast to a node type represented by the given tag type.</returns>
         </member>
-        <member name="P:Substrate.Nbt.TagNodeByte.Data">
-            <summary>
-            Gets or sets a byte of tag data.
-            </summary>
-        </member>
         <member name="M:Substrate.Nbt.TagNodeByte.#ctor">
             <summary>
             Constructs a new byte node with a data value of 0.
             </summary>
         </member>
         <member name="M:Substrate.Nbt.TagNodeByte.#ctor(System.Byte)">
+            <summary>
+            Constructs a new byte node.
+            </summary>
+            <param name="d">The value to set the node's tag data value.</param>
+        </member>
+        <member name="M:Substrate.Nbt.TagNodeByte.#ctor(System.Boolean)">
             <summary>
             Constructs a new byte node.
             </summary>
@@ -6154,6 +6217,13 @@
             </summary>
             <param name="b">A byte value.</param>
             <returns>A new byte node containing the given value.</returns>
+        </member>
+        <member name="M:Substrate.Nbt.TagNodeByte.op_Implicit(Substrate.Nbt.TagNodeByte)~System.Boolean">
+            <summary>
+            Converts a byte node to a system bool representing the same value.
+            </summary>
+            <param name="b">A byte node.</param>
+            <returns>A system bool set to true if the node's data value is non-zero.</returns>
         </member>
         <member name="M:Substrate.Nbt.TagNodeByte.op_Implicit(Substrate.Nbt.TagNodeByte)~System.Byte">
             <summary>
@@ -6428,6 +6498,11 @@
             Get's the block's Id.
             </summary>
         </member>
+        <member name="P:Substrate.BlockInfo.NameID">
+            <summary>
+            Get's the name ID of the block type.
+            </summary>
+        </member>
         <member name="P:Substrate.BlockInfo.Name">
             <summary>
             Get's the name of the block type.
@@ -6436,6 +6511,7 @@
         <member name="P:Substrate.BlockInfo.Opacity">
             <summary>
             Gets the block's opacity value.  An opacity of 0 is fully transparent to light.
+            May change the value in TransmitsLight.
             </summary>
         </member>
         <member name="P:Substrate.BlockInfo.Luminance">
@@ -6443,6 +6519,7 @@
             Gets the block's luminance value.
             </summary>
             <remarks>Blocks with luminance act as light sources and transmit light to other blocks.</remarks>
+            <seealso cref="P:Substrate.AlphaBlockCollection.AutoLight"/>
         </member>
         <member name="P:Substrate.BlockInfo.TransmitsLight">
             <summary>
@@ -6460,10 +6537,12 @@
             Checks whether the block stops fluid from passing through it.
             </summary>
             <remarks>A block that does not block fluids will be destroyed by fluid.</remarks>
+            <seealso cref="P:Substrate.AlphaBlockCollection.AutoFluid"/>
         </member>
         <member name="P:Substrate.BlockInfo.State">
             <summary>
             Gets the block's physical state type.
+            May change BlocksFluid
             </summary>
         </member>
         <member name="P:Substrate.BlockInfo.Registered">
@@ -6471,70 +6550,29 @@
             Checks whether this block type has been registered as a known type.
             </summary>
         </member>
-        <member name="M:Substrate.BlockInfo.#ctor(System.Int32,System.String)">
+        <member name="P:Substrate.BlockInfo.Tick">
+            <summary>
+            Sets the default tick rate/delay used for updating this block.
+            The tick rate in frames between scheduled updates on this block.
+            </summary>
+            <remarks>Set to <c>0</c> to indicate that this block is not processed by tick updates.</remarks>
+            <seealso cref="P:Substrate.AlphaBlockCollection.AutoTileTick"/>
+        </member>
+        <member name="P:Substrate.BlockInfo.TileEntityName">
+            <summary>
+            Gets the name of the registered <see cref="T:Substrate.TileEntity"/> type associated with this block type.
+            Sets the name of the registered <see cref="T:Substrate.TileEntity"/> type associated with this block type.
+            </summary>
+            <seealso cref="T:Substrate.TileEntityFactory"/>
+        </member>
+        <member name="M:Substrate.BlockInfo.#ctor(System.Int32,System.String,System.String)">
             <summary>
             Constructs a new <see cref="T:Substrate.BlockInfo"/> record for a given block id and name.
             </summary>
             <param name="id">The id of the block.</param>
+            <param name="nameId">The name ID of the block.</param>
             <param name="name">The name of the block.</param>
             <remarks>All user-constructed <see cref="T:Substrate.BlockInfo"/> objects are registered automatically.</remarks>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetOpacity(System.Int32)">
-            <summary>
-            Sets a new opacity value for this block type.
-            </summary>
-            <param name="opacity">A new opacity value.</param>
-            <returns>The object instance used to invoke this method.</returns>
-            <seealso cref="P:Substrate.AlphaBlockCollection.AutoLight"/>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetLuminance(System.Int32)">
-            <summary>
-            Sets a new luminance value for this block type.
-            </summary>
-            <param name="luminance">A new luminance value.</param>
-            <returns>The object instance used to invoke this method.</returns>
-            <seealso cref="P:Substrate.AlphaBlockCollection.AutoLight"/>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetLightTransmission(System.Boolean)">
-            <summary>
-            Sets whether or not this block type will transmit light to neigboring blocks.
-            </summary>
-            <param name="transmit">True if this block type can transmit light to neighbors, false otherwise.</param>
-            <returns>The object instance used to invoke this method.</returns>
-            <seealso cref="P:Substrate.AlphaBlockCollection.AutoLight"/>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetDataLimits(System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Sets limitations on what data values are considered valid for this block type.
-            </summary>
-            <param name="low">The lowest valid integer value.</param>
-            <param name="high">The highest valid integer value.</param>
-            <param name="bitmask">A mask representing which bits are interpreted as a bitmask in the data value.</param>
-            <returns>The object instance used to invoke this method.</returns>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetState(Substrate.BlockState)">
-            <summary>
-            Sets the physical state of the block type.
-            </summary>
-            <param name="state">A physical state.</param>
-            <returns>The object instance used to invoke this method.</returns>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetBlocksFluid(System.Boolean)">
-            <summary>
-            Sets whether or not this block type blocks fluids.
-            </summary>
-            <param name="blocks">True if this block type blocks fluids, false otherwise.</param>
-            <returns>The object instance used to invoke this method.</returns>
-            <seealso cref="P:Substrate.AlphaBlockCollection.AutoFluid"/>
-        </member>
-        <member name="M:Substrate.BlockInfo.SetTick(System.Int32)">
-            <summary>
-            Sets the default tick rate/delay used for updating this block.
-            </summary>
-            <remarks>Set <paramref name="tick"/> to <c>0</c> to indicate that this block is not processed by tick updates.</remarks>
-            <param name="tick">The tick rate in frames between scheduled updates on this block.</param>
-            <returns>The object instance used to invoke this method.</returns>
-            <seealso cref="P:Substrate.AlphaBlockCollection.AutoTileTick"/>
         </member>
         <member name="M:Substrate.BlockInfo.TestData(System.Int32)">
             <summary>
@@ -6542,32 +6580,7 @@
             </summary>
             <param name="data">A data value to test.</param>
             <returns>True if the data value is valid, false otherwise.</returns>
-            <remarks>This method uses internal information set by <see cref="M:Substrate.BlockInfo.SetDataLimits(System.Int32,System.Int32,System.Int32)"/>.</remarks>
-        </member>
-        <member name="T:Substrate.BlockInfoEx">
-            <summary>
-            An extended <see cref="T:Substrate.BlockInfo"/> that includes <see cref="T:Substrate.TileEntity"/> information.
-            </summary>
-        </member>
-        <member name="P:Substrate.BlockInfoEx.TileEntityName">
-            <summary>
-            Gets the name of the <see cref="T:Substrate.TileEntity"/> type associated with this block type.
-            </summary>
-        </member>
-        <member name="M:Substrate.BlockInfoEx.#ctor(System.Int32,System.String)">
-            <summary>
-            Constructs a new <see cref="T:Substrate.BlockInfoEx"/> with a given block id and name.
-            </summary>
-            <param name="id">The id of the block type.</param>
-            <param name="name">The name of the block type.</param>
-        </member>
-        <member name="M:Substrate.BlockInfoEx.SetTileEntity(System.String)">
-            <summary>
-            Sets the name of the <see cref="T:Substrate.TileEntity"/> type associated with this block type.
-            </summary>
-            <param name="name">The name of a registered <see cref="T:Substrate.TileEntity"/> type.</param>
-            <returns>The object instance used to invoke this method.</returns>
-            <seealso cref="T:Substrate.TileEntityFactory"/>
+            <remarks>This method uses internal information set by <see cref="T:Substrate.BlockInfo.BlockDataLimits"/>.</remarks>
         </member>
         <member name="T:Substrate.BlockManager">
             <summary>
@@ -7154,6 +7167,14 @@
             Gets an enumerator over all registered Entities.
             </summary>
         </member>
+        <member name="P:Substrate.ItemTag.Enchantments">
+            <summary>
+            Gets the list of <see cref="T:Substrate.Enchantment"/>s applied to this item.
+            </summary>
+        </member>
+        <member name="M:Substrate.ItemTag.Copy">
+            <inheritdoc/>
+        </member>
         <member name="T:Substrate.Item">
             <summary>
             Represents an item (or item stack) within an item slot.
@@ -7170,11 +7191,6 @@
             </summary>
             <param name="id">An item id.</param>
         </member>
-        <member name="P:Substrate.Item.Info">
-            <summary>
-            Gets an <see cref="T:Substrate.ItemInfo"/> entry for this item's type.
-            </summary>
-        </member>
         <member name="P:Substrate.Item.ID">
             <summary>
             Gets or sets the current type (id) of the item.
@@ -7187,6 +7203,11 @@
             <remarks>The damage value may represent a generic data value for some items.</remarks>
         </member>
         <member name="P:Substrate.Item.Count">
+            <summary>
+            Gets or sets the number of this item stacked together in an item slot.
+            </summary>
+        </member>
+        <member name="P:Substrate.Item.Tag">
             <summary>
             Gets or sets the number of this item stacked together in an item slot.
             </summary>
@@ -7252,14 +7273,14 @@
             Gets or sets whether the player can create or destroy blocks.
             </summary>
         </member>
-        <member name="P:Substrate.PlayerAbilities.FlySpeed">
-            <summary>
-            Gets or sets the player's walking speed.  Always 0.1.
-            </summary>
-        </member>
         <member name="P:Substrate.PlayerAbilities.WalkSpeed">
             <summary>
             Gets or sets the player's flying speed.  Always 0.05.
+            </summary>
+        </member>
+        <member name="P:Substrate.PlayerAbilities.FlySpeed">
+            <summary>
+            Gets or sets the player's walking speed.  Always 0.1.
             </summary>
         </member>
         <member name="M:Substrate.PlayerAbilities.Copy">
@@ -7297,6 +7318,11 @@
             Gets or sets the dimension that the player is currently in.
             </summary>
         </member>
+        <member name="P:Substrate.Player.World">
+            <summary>
+            Gets or sets the name of the world that the player is currently within.
+            </summary>
+        </member>
         <member name="P:Substrate.Player.IsSleeping">
             <summary>
             Gets or sets a value indicating whether the player is sleeping in a bed.
@@ -7317,39 +7343,14 @@
             Tests if the player currently has a personal spawn point.
             </summary>
         </member>
-        <member name="P:Substrate.Player.World">
-            <summary>
-            Gets or sets the name of the world that the player is currently within.
-            </summary>
-        </member>
-        <member name="P:Substrate.Player.Name">
-            <summary>
-            Gets or sets the name that is used when the player is read or written from a <see cref="T:Substrate.PlayerManager"/>.
-            </summary>
-        </member>
-        <member name="P:Substrate.Player.Score">
-            <summary>
-            Gets or sets the player's score.
-            </summary>
-        </member>
-        <member name="P:Substrate.Player.XPLevel">
-            <summary>
-            Gets or sets the player's XP Level.
-            </summary>
-        </member>
-        <member name="P:Substrate.Player.XPTotal">
-            <summary>
-            Gets or sets the amount of the player's XP points.
-            </summary>
-        </member>
         <member name="P:Substrate.Player.HungerLevel">
             <summary>
             Gets or sets the hunger level of the player.  Valid values range 0 - 20.
             </summary>
         </member>
-        <member name="P:Substrate.Player.HungerSaturationLevel">
+        <member name="P:Substrate.Player.HungerTimer">
             <summary>
-            Gets or sets the player's hunger saturation level, which is reserve food capacity above <see cref="P:Substrate.Player.HungerLevel"/>.
+            Gets or sets the timer used to periodically heal or damage the player based on <see cref="P:Substrate.Player.HungerLevel"/>.  Valid values range 0 - 80.
             </summary>
         </member>
         <member name="P:Substrate.Player.HungerExhaustionLevel">
@@ -7357,9 +7358,34 @@
             Gets or sets the counter towards the next hunger point decrement.  Valid values range 0.0 - 4.0.
             </summary>
         </member>
-        <member name="P:Substrate.Player.HungerTimer">
+        <member name="P:Substrate.Player.HungerSaturationLevel">
             <summary>
-            Gets or sets the timer used to periodically heal or damage the player based on <see cref="P:Substrate.Player.HungerLevel"/>.  Valid values range 0 - 80.
+            Gets or sets the player's hunger saturation level, which is reserve food capacity above <see cref="P:Substrate.Player.HungerLevel"/>.
+            </summary>
+        </member>
+        <member name="P:Substrate.Player.Name">
+            <summary>
+            Gets or sets the name that is used when the player is read or written from a <see cref="T:Substrate.PlayerManager"/>.
+            </summary>
+        </member>
+        <member name="P:Substrate.Player.XpP">
+            <summary>
+            Gets or sets the player's XP Level.
+            </summary>
+        </member>
+        <member name="P:Substrate.Player.XpLevel">
+            <summary>
+            Gets or sets the player's XP Level.
+            </summary>
+        </member>
+        <member name="P:Substrate.Player.XpTotal">
+            <summary>
+            Gets or sets the amount of the player's XP points.
+            </summary>
+        </member>
+        <member name="P:Substrate.Player.Score">
+            <summary>
+            Gets or sets the player's score.
             </summary>
         </member>
         <member name="P:Substrate.Player.Abilities">
@@ -7916,6 +7942,141 @@
             Creates a deep-copy of the <see cref="T:Substrate.TileTick"/> including any data defined in a subtype.
             </summary>
             <returns>A deep-copy of the <see cref="T:Substrate.TileTick"/>.</returns>
+        </member>
+        <member name="P:Substrate.Villages.VillageCompound.Tick">
+            <summary>
+             Internal clock.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillageCompound.Villages">
+            <summary>
+            List of Byte tags when empty, list of Compound tags otherwise.
+            </summary>
+        </member>
+        <member name="T:Substrate.Villages.VillagesCompound">
+            <summary>
+            A village
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.ACX">
+            <summary>
+            Aggregate of the x-coordinates of all houses.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.ACY">
+            <summary>
+            Aggregate of the y-coordinates of all houses.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.ACZ">
+            <summary>
+             Aggregate of the z-coordinates of all houses.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.CX">
+            <summary>
+             X coordinate of the village center.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.CY">
+            <summary>
+            Y coordinate of the village center.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.CZ">
+            <summary>
+            Z coordinate of the village center.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.Golems">
+            <summary>
+            The number of Iron Golems.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.MTick">
+            <summary>
+            Last time a villager was killed by a mob, or by a damage source that's not related to an entity while a player was nearby.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.PopSize">
+            <summary>
+            The number of Villagers.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.Radius">
+            <summary>
+            Radius of the village.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.Stable">
+            <summary>
+            Last time a house was added to the village.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.Tick">
+            <summary>
+            Internal clock.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.Doors">
+            <summary>
+            The doors in the village.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.VillagesCompound.Players">
+            <summary>
+            List of Byte tags when empty, list of Compound tags otherwise.
+            </summary>
+        </member>
+        <member name="T:Substrate.Villages.DoorsCompound">
+            <summary>
+            A door.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.DoorsCompound.IDX">
+            <summary>
+            Specifies the inside direction along x.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.DoorsCompound.IDZ">
+            <summary>
+            Specifies the inside direction along z.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.DoorsCompound.TS">
+            <summary>
+            Last time a villager was nearby.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.DoorsCompound.X">
+            <summary>
+            X coordinate.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.DoorsCompound.Y">
+            <summary>
+            Y coordinate.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.DoorsCompound.Z">
+            <summary>
+            Z coordinate.
+            </summary>
+        </member>
+        <member name="T:Substrate.Villages.PlayersCompound">
+            <summary>
+            A player who has traded or harmed villagers.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.PlayersCompound.Name">
+            <summary>
+            The name of the player.
+            </summary>
+        </member>
+        <member name="P:Substrate.Villages.PlayersCompound.S">
+            <summary>
+            The social rank of the player. Can be negative. Goes up with trading and down with harming villagers
+            </summary>
         </member>
         <member name="T:Substrate.Dimension">
             <summary>

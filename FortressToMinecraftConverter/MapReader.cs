@@ -190,46 +190,47 @@ namespace FortressToMinecraftConverter
         public void ExportMap(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = sender as BackgroundWorker;
-
             string path = e.Argument as string;
-            AnvilWorld world = AnvilWorld.Create(path);
-            var blockManager = world.GetBlockManager();
-            blockManager.AutoLight = false;
 
-            int y = 0;
-            for(int i = 0; i < Tiles.Length; i++)
-            {
-                var level = Tiles[i];
-                if (!level.Enabled)
-                    continue;
-                for(int x = 0; x < level.Width;x++)
-                    for(int z = 0; z < level.Height; z++)
+            worker.ReportProgress(0, "Exporting map to " + path);
+
+            AnvilWorld world = AnvilWorld.Create(path);
+            world.Level.LevelName = "Dwarf Fortress World";
+            world.Level.GameType = GameType.CREATIVE;
+            world.Save();
+            var chunkManager = world.GetChunkManager();
+            int total = (Tiles[0].Height * tileWidth / 16) * (Tiles[0].Width * tileWidth / 16);
+            int done = 0;
+            for (int chunkZ = 0; chunkZ < Tiles[0].Height * tileWidth / 16; chunkZ++)
+                for (int chunkX = 0; chunkX < Tiles[0].Width * tileWidth / 16; chunkX++)
+                {
+                    var chunk = chunkManager.CreateChunk(chunkX, chunkZ);
+                    var blocks = chunk.Blocks;
+                    blocks.AutoLight = false;
+                    int chunkY = 0;
+                    foreach (var level in Tiles)
                     {
-                        var tile = level[x, level.Height - z - 1];
-                        if (tile == null)
+                        if (!level.Enabled)
                             continue;
-                        if (tile.BottomSolid)
+                        for(int y = 0; y < tileHeight; y++)
                         {
-                            for(int u = 0; u < tileWidth; u++)
-                                for(int v = 0; v < tileWidth; v++)
+                            for (int z = 0; z < 16; z++)
+                                for (int x = 0; x < 16; x++)
                                 {
-                                    blockManager.SetID(x + u, y, z + u, 1);
+                                    blocks.SetBlock(x, y + (chunkY * tileHeight), z,
+                                        level.GetBlock(x + (chunkX * 16), y, z + (chunkZ * 16)));
                                 }
                         }
-                        if (tile.TopSolid)
-                        {
-                            for (int u = 0; u < tileWidth; u++)
-                                for (int v = 0; v < tileWidth; v++)
-                                    for (int w = 0; w < tileWidth; w++)
-                                    {
-                                        blockManager.SetID(x + u, y + w, z + u, 1);
-                                    }
-                        }
+                        chunkY++;
                     }
-                worker.ReportProgress(i * 100 / Tiles.Length, "Writing Minecraft Tiles");
-            }
-
-            world.Save();
+                    blocks.RebuildSkyLight();
+                    blocks.RebuildBlockLight();
+                    blocks.RebuildHeightMap();
+                    chunkManager.Save();
+                    done++;
+                    worker.ReportProgress(done * 100 / total, "Generating Chunks");
+                }
+            worker.ReportProgress(100, "Finished exporting map");
         }
     }
 }
