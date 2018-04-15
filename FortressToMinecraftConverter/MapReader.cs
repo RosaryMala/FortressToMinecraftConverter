@@ -12,6 +12,8 @@ namespace FortressToMinecraftConverter
     class MapReader : INotifyPropertyChanged
     {
         const int BlockSize = 16;
+        const int tileWidth = 3;
+        const int tileHeight = 3;
         
         bool isConnected = false;
         private RemoteClient client;
@@ -185,9 +187,49 @@ namespace FortressToMinecraftConverter
             }
         }
 
-        public void ExportMap(string path)
+        public void ExportMap(object sender, DoWorkEventArgs e)
         {
+            BackgroundWorker worker = sender as BackgroundWorker;
+
+            string path = e.Argument as string;
             AnvilWorld world = AnvilWorld.Create(path);
+            var blockManager = world.GetBlockManager();
+            blockManager.AutoLight = false;
+
+            int y = 0;
+            for(int i = 0; i < Tiles.Length; i++)
+            {
+                var level = Tiles[i];
+                if (!level.Enabled)
+                    continue;
+                for(int x = 0; x < level.Width;x++)
+                    for(int z = 0; z < level.Height; z++)
+                    {
+                        var tile = level[x, level.Height - z - 1];
+                        if (tile == null)
+                            continue;
+                        if (tile.BottomSolid)
+                        {
+                            for(int u = 0; u < tileWidth; u++)
+                                for(int v = 0; v < tileWidth; v++)
+                                {
+                                    blockManager.SetID(x + u, y, z + u, 1);
+                                }
+                        }
+                        if (tile.TopSolid)
+                        {
+                            for (int u = 0; u < tileWidth; u++)
+                                for (int v = 0; v < tileWidth; v++)
+                                    for (int w = 0; w < tileWidth; w++)
+                                    {
+                                        blockManager.SetID(x + u, y + w, z + u, 1);
+                                    }
+                        }
+                    }
+                worker.ReportProgress(i * 100 / Tiles.Length, "Writing Minecraft Tiles");
+            }
+
+            world.Save();
         }
     }
 }

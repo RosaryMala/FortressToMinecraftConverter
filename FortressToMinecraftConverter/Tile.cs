@@ -97,7 +97,42 @@ namespace FortressToMinecraftConverter
 
         public MatPair MaterialIndex { get; internal set; }
         public MaterialDefinition MaterialDefinition { get; internal set; }
-
+        public bool BottomSolid
+        {
+            get
+            {
+                switch (TileType.shape)
+                {
+                    case TiletypeShape.FLOOR:
+                    case TiletypeShape.BOULDER:
+                    case TiletypeShape.PEBBLES:
+                    case TiletypeShape.WALL:
+                    case TiletypeShape.FORTIFICATION:
+                    case TiletypeShape.STAIR_UP:
+                    case TiletypeShape.RAMP:
+                    case TiletypeShape.BROOK_BED:
+                    case TiletypeShape.TREE_SHAPE:
+                    case TiletypeShape.SAPLING:
+                    case TiletypeShape.SHRUB:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        }
+        public bool TopSolid
+        {
+            get
+            {
+                switch (TileType.shape)
+                {
+                    case TiletypeShape.WALL:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        }
         static Color MultiplyColor(Color color, float number)
         {
             var alpha = color.A;

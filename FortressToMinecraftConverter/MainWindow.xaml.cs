@@ -17,7 +17,7 @@ namespace FortressToMinecraftConverter
             zList.Items.SortDescriptions.Add(new SortDescription("Level", ListSortDirection.Descending));
         }
 
-        private void readMapButton_Click(object sender, RoutedEventArgs e)
+        private void ReadMapButton_Click(object sender, RoutedEventArgs e)
         {
             var reader = new MapReader();
             BackgroundWorker readMapWorker = new BackgroundWorker();
@@ -32,6 +32,7 @@ namespace FortressToMinecraftConverter
         {
             mapReader = e.Result as MapReader;
             this.DataContext = mapReader;
+            exportMapButton.IsEnabled = true;
         }
 
         private void ReadMapWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
@@ -40,12 +41,35 @@ namespace FortressToMinecraftConverter
             progressText.Text = e.UserState.ToString();
         }
 
-        private void levelEnabled_Click(object sender, RoutedEventArgs e)
+        private void LevelEnabled_Click(object sender, RoutedEventArgs e)
         {
             foreach (var item in zList.SelectedItems)
             {
                 ((ZLevel)item).Enabled = ((CheckBox)sender).IsChecked.Value;
             }
+        }
+
+        private void ExportMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            string path;
+            using (var dialog = new System.Windows.Forms.FolderBrowserDialog())
+            {
+                System.Windows.Forms.DialogResult result = dialog.ShowDialog();
+                if (result != System.Windows.Forms.DialogResult.OK)
+                    return;
+                path = dialog.SelectedPath;
+            }
+            BackgroundWorker exportWorker = new BackgroundWorker();
+            exportWorker.WorkerReportsProgress = true;
+            exportWorker.DoWork += mapReader.ExportMap;
+            exportWorker.ProgressChanged += ReadMapWorker_ProgressChanged;
+            exportWorker.RunWorkerCompleted += ExportWorker_RunWorkerCompleted;
+            exportWorker.RunWorkerAsync(path);
+        }
+
+        private void ExportWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            
         }
     }
 }

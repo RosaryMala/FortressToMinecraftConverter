@@ -20,7 +20,8 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <StackPanel Margin="10">
-            <Button x:Name="readMapButton" Content="Read Map" Click="readMapButton_Click"/>
+            <Button x:Name="readMapButton" Content="Read Map" Click="ReadMapButton_Click" Margin="5"/>
+            <Button x:Name="exportMapButton" Content="Export Map" Margin="5" IsEnabled="False" Click="ExportMapButton_Click"/>
         </StackPanel>
         <Grid Grid.Column="2">
             <Grid.RowDefinitions>
@@ -33,7 +34,7 @@
                         <StackPanel Margin="2" Orientation="Horizontal" HorizontalAlignment="Right">
                             <TextBlock Text="{Binding Level}" Margin="2" Width="20" TextAlignment="Right"/>
                             <Image Source="{Binding BitmapSource}" Stretch="Uniform" Margin="2" Width="40" Height="40"/>
-                            <CheckBox x:Name="levelEnabled" Margin="2" IsChecked="{Binding Enabled}" Click="levelEnabled_Click"/>
+                            <CheckBox x:Name="levelEnabled" Margin="2" IsChecked="{Binding Enabled}" Click="LevelEnabled_Click"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
