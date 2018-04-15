@@ -1,21 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Media.Imaging;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace FortressToMinecraftConverter
 {
-    class ZLevel
+    class ZLevel : INotifyPropertyChanged
     {
         Tile[,] tiles;
+
+        public int Level { get; }
+
         private bool dirty = true;
 
-        public ZLevel(int width, int height)
+        public ZLevel(int width, int height, int level)
         {
             tiles = new Tile[width, height];
+            Level = level;
         }
 
         public Tile this[int x, int y]
@@ -31,7 +33,21 @@ namespace FortressToMinecraftConverter
             }
         }
 
-        public bool Enabled { get; set; }
+        private bool _enabled;
+        public bool Enabled {
+            get
+            {
+                return _enabled;
+            }
+            set
+            {
+                if(_enabled != value)
+                {
+                    _enabled = value;
+                    NotifyPropertyChanged();
+                }
+            }
+        }
 
         BitmapSource bitmapSource;
         const double DPI = 96;
@@ -82,6 +98,16 @@ namespace FortressToMinecraftConverter
             }
             bitmapSource = BitmapSource.Create(Width, Height, DPI, DPI, PixelFormats.Bgra32, null, pixels, Width * 4);
             dirty = false;
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        // This method is called by the Set accessor of each property.
+        // The CallerMemberName attribute that is applied to the optional propertyName
+        // parameter causes the property name of the caller to be substituted as an argument.
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

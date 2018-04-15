@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="ColorConsoleStream.cs" />
     <Compile Include="MapReader.cs" />
+    <Compile Include="MatPairStruct.cs" />
     <Compile Include="protos.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\Basic.cs" />
     <Compile Include="RemoteClientDF-net\DFHack\BasicApi.cs" />

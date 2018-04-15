@@ -18,26 +18,24 @@
         <StackPanel Margin="10">
             <Button x:Name="readMapButton" Content="Read Map" Click="readMapButton_Click"/>
         </StackPanel>
-        <ListBox x:Name="zList" Grid.Column="2" Margin="10,10,10,10" ItemsSource="{Binding Tiles}">
-            <ListBox.LayoutTransform>
-                <ScaleTransform ScaleY="-1"/>
-            </ListBox.LayoutTransform>
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Height="20" Margin="2" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
-                        <Grid.LayoutTransform>
-                            <ScaleTransform ScaleY="-1"/>
-                        </Grid.LayoutTransform>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="{Binding BitmapSource}" Stretch="Fill" Margin="0,0,0,0"/>
-                        <CheckBox Grid.Column="1" x:Name="levelEnabled" Margin="2,2,2,2" IsChecked="{Binding Enabled}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <ListBox x:Name="zList"  Margin="10" ItemsSource="{Binding Tiles}" SelectionMode="Extended" MinWidth="50" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Height="40" Margin="2" Orientation="Horizontal">
+                            <TextBlock Text="{Binding Level}" Margin="2"/>
+                            <Image Source="{Binding BitmapSource}" Stretch="Fill" Margin="0,0,0,0"/>
+                            <CheckBox x:Name="levelEnabled" Margin="2" IsChecked="{Binding Enabled}" Click="levelEnabled_Click"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="10" Grid.Row="1" TextWrapping="Wrap" Text="{Binding SelectedLevelsString}" VerticalAlignment="Center"/>
+        </Grid>
         <Image x:Name="image" Grid.Column="1" Margin="10,10,115,10" Source="{Binding ElementName=zList, Path=SelectedItem.BitmapSource}" RenderOptions.BitmapScalingMode="NearestNeighbor" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
