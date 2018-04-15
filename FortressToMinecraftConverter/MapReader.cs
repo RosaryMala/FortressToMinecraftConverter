@@ -124,6 +124,11 @@ namespace FortressToMinecraftConverter
 
                 }
 
+            foreach (var level in Tiles)
+            {
+                level.EnableIfImportant();
+            }
+
             PropertyChanged(this, new PropertyChangedEventArgs("Tiles"));
             Console.WriteLine("Done!");
         }

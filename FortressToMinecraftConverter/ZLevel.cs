@@ -100,6 +100,37 @@ namespace FortressToMinecraftConverter
             dirty = false;
         }
 
+        public void EnableIfImportant()
+        {
+            foreach (var tile in tiles)
+            {
+                if (tile == null)
+                    continue;
+                switch (tile.TileType.shape)
+                {
+                    case RemoteFortressReader.TiletypeShape.FLOOR:
+                    case RemoteFortressReader.TiletypeShape.BOULDER:
+                    case RemoteFortressReader.TiletypeShape.PEBBLES:
+                    case RemoteFortressReader.TiletypeShape.FORTIFICATION:
+                    case RemoteFortressReader.TiletypeShape.STAIR_UP:
+                    case RemoteFortressReader.TiletypeShape.STAIR_DOWN:
+                    case RemoteFortressReader.TiletypeShape.RAMP:
+                    case RemoteFortressReader.TiletypeShape.BROOK_BED:
+                    case RemoteFortressReader.TiletypeShape.TREE_SHAPE:
+                    case RemoteFortressReader.TiletypeShape.SAPLING:
+                    case RemoteFortressReader.TiletypeShape.SHRUB:
+                    case RemoteFortressReader.TiletypeShape.ENDLESS_PIT:
+                    case RemoteFortressReader.TiletypeShape.BRANCH:
+                    case RemoteFortressReader.TiletypeShape.TRUNK_BRANCH:
+                    case RemoteFortressReader.TiletypeShape.TWIG:
+                        Enabled = true;
+                        return;
+                    default:
+                        break;
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         // This method is called by the Set accessor of each property.
