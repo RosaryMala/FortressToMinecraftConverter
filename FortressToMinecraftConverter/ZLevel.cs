@@ -44,7 +44,7 @@ namespace FortressToMinecraftConverter
         public AlphaBlock GetBlock(int x, int y, int z)
         {
             int dfX = x / 3;
-            int dfY = Width - 1 - (z / 3);
+            int dfY = z / 3;
             var tile = this[dfX, dfY];
             if (tile == null)
                 return new AlphaBlock(0);

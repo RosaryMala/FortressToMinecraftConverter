@@ -147,6 +147,7 @@ namespace FortressToMinecraftConverter
             worker.ReportProgress(100, "Done! Ready to export.");
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tiles"));
+
             e.Result = this;
         }
 
@@ -207,6 +208,7 @@ namespace FortressToMinecraftConverter
                     var chunk = chunkManager.CreateChunk(chunkX, chunkZ);
                     var blocks = chunk.Blocks;
                     blocks.AutoLight = false;
+                    chunk.IsTerrainPopulated = true;
                     int chunkY = 0;
                     foreach (var level in Tiles)
                     {
