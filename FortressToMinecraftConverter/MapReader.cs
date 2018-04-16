@@ -198,6 +198,7 @@ namespace FortressToMinecraftConverter
             AnvilWorld world = AnvilWorld.Create(path);
             world.Level.LevelName = "Dwarf Fortress World";
             world.Level.GameType = GameType.CREATIVE;
+            world.Level.Spawn = new SpawnPoint(36, 255, 36);
             world.Save();
             var chunkManager = world.GetChunkManager();
             int total = (Tiles[0].Height * tileWidth / 16) * (Tiles[0].Width * tileWidth / 16);

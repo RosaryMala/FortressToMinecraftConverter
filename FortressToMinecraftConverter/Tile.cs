@@ -141,9 +141,76 @@ namespace FortressToMinecraftConverter
             return color;
         }
 
-        public AlphaBlock GetBlockMaterial(int x, int y, int z)
+        public AlphaBlock GetSolidBlock(int x, int y, int z)
         {
+            switch (TileType.material)
+            {
+                case TiletypeMaterial.NO_MATERIAL:
+                    break;
+                case TiletypeMaterial.AIR:
+                    break;
+                case TiletypeMaterial.SOIL:
+                    return new AlphaBlock(3);
+                case TiletypeMaterial.STONE:
+                    break;
+                case TiletypeMaterial.FEATURE:
+                    break;
+                case TiletypeMaterial.LAVA_STONE:
+                    break;
+                case TiletypeMaterial.MINERAL:
+                    break;
+                case TiletypeMaterial.FROZEN_LIQUID:
+                    break;
+                case TiletypeMaterial.CONSTRUCTION:
+                    break;
+                case TiletypeMaterial.GRASS_LIGHT:
+                case TiletypeMaterial.GRASS_DARK:
+                    return new AlphaBlock(2);
+                case TiletypeMaterial.GRASS_DRY:
+                    break;
+                case TiletypeMaterial.GRASS_DEAD:
+                    break;
+                case TiletypeMaterial.PLANT:
+                    break;
+                case TiletypeMaterial.HFS:
+                    break;
+                case TiletypeMaterial.CAMPFIRE:
+                    break;
+                case TiletypeMaterial.FIRE:
+                    break;
+                case TiletypeMaterial.ASHES:
+                    break;
+                case TiletypeMaterial.MAGMA:
+                    break;
+                case TiletypeMaterial.DRIFTWOOD:
+                    break;
+                case TiletypeMaterial.POOL:
+                    break;
+                case TiletypeMaterial.BROOK:
+                    break;
+                case TiletypeMaterial.RIVER:
+                    break;
+                case TiletypeMaterial.ROOT:
+                    break;
+                case TiletypeMaterial.TREE_MATERIAL:
+                    return new AlphaBlock(17);
+                case TiletypeMaterial.MUSHROOM:
+                    return new AlphaBlock(100);
+                case TiletypeMaterial.UNDERWORLD_GATE:
+                    break;
+                default:
+                    break;
+            }
             return new AlphaBlock(1);
+        }
+
+        public AlphaBlock GetAirBlock(int x, int y, int z)
+        {
+            if (Water > 0 && (Water / 7.0f * MapReader.tileHeight >= y % MapReader.tileHeight))
+                return new AlphaBlock(9);
+            if (Magma > 0 && (Magma / 7.0f * MapReader.tileHeight >= y % MapReader.tileHeight))
+                return new AlphaBlock(11);
+            return new AlphaBlock(0);
         }
     }
 }

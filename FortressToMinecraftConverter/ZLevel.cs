@@ -90,13 +90,13 @@ namespace FortressToMinecraftConverter
                 case RemoteFortressReader.TiletypeShape.WALL:
                     break;
                 case RemoteFortressReader.TiletypeShape.FORTIFICATION:
-                    if (localY == 0)
-                        return tile.GetBlockMaterial(x, y, z);
+                    if (localY < 2)
+                        return tile.GetSolidBlock(x, y, z);
                     if (localX == 1)
-                        return new AlphaBlock(0);
+                        return tile.GetAirBlock(x, y, z);
                     if (localZ == 1)
-                        return new AlphaBlock(0);
-                    return tile.GetBlockMaterial(x, y, z);
+                        return tile.GetAirBlock(x, y, z);
+                    return tile.GetSolidBlock(x, y, z);
                 case RemoteFortressReader.TiletypeShape.STAIR_UP:
                     break;
                 case RemoteFortressReader.TiletypeShape.STAIR_DOWN:
@@ -104,6 +104,74 @@ namespace FortressToMinecraftConverter
                 case RemoteFortressReader.TiletypeShape.STAIR_UPDOWN:
                     break;
                 case RemoteFortressReader.TiletypeShape.RAMP:
+                    if (localY == 0)
+                        return tile.GetSolidBlock(x, y, z);
+                    switch (localX)
+                    {
+                        case 0:
+                            switch (localZ)
+                            {
+                                case 0:
+                                    if (xMinus.TopSolid || zMinus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    else
+                                        return tile.GetAirBlock(x, y, z);
+                                case 1:
+                                    if(xMinus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    if((zMinus.TopSolid || zPlus.TopSolid) && localY == 1)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    return tile.GetAirBlock(x, y, z);
+                                case 2:
+                                    if (xMinus.TopSolid || zPlus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    else
+                                        return tile.GetAirBlock(x, y, z);
+                            }
+                            break;
+                        case 1:
+                            switch (localZ)
+                            {
+                                case 0:
+                                    if (zMinus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    if ((xMinus.TopSolid || xPlus.TopSolid) && localY == 1)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    return tile.GetAirBlock(x, y, z);
+                                case 1:
+                                    if (localY == 1)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    return tile.GetAirBlock(x, y, z);
+                                case 2:
+                                    if (zPlus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    if ((xMinus.TopSolid || xPlus.TopSolid) && localY == 1)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    return tile.GetAirBlock(x, y, z);
+                            }
+                            break;
+                        case 2:
+                            switch (localZ)
+                            {
+                                case 0:
+                                    if (xPlus.TopSolid || zMinus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    else
+                                        return tile.GetAirBlock(x, y, z);
+                                case 1:
+                                    if (xPlus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    if ((zMinus.TopSolid || zPlus.TopSolid) && localY == 1)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    return tile.GetAirBlock(x, y, z);
+                                case 2:
+                                    if (xPlus.TopSolid || zPlus.TopSolid)
+                                        return tile.GetSolidBlock(x, y, z);
+                                    else
+                                        return tile.GetAirBlock(x, y, z);
+                            }
+                            break;
+                    }
                     break;
                 case RemoteFortressReader.TiletypeShape.RAMP_TOP:
                     break;
@@ -130,10 +198,10 @@ namespace FortressToMinecraftConverter
             }
 
             if (localY == 0 && tile.BottomSolid)
-                return tile.GetBlockMaterial(x, y, z);
+                return tile.GetSolidBlock(x, y, z);
             if (localY > 0 && tile.TopSolid)
-                return tile.GetBlockMaterial(x, y, z);
-            return new AlphaBlock(0);
+                return tile.GetSolidBlock(x, y, z);
+            return tile.GetAirBlock(x, y, z);
         }
 
         private bool _enabled;
