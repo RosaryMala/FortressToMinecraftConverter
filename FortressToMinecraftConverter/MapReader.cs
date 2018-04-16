@@ -12,8 +12,8 @@ namespace FortressToMinecraftConverter
     class MapReader : INotifyPropertyChanged
     {
         const int BlockSize = 16;
-        const int tileWidth = 3;
-        const int tileHeight = 3;
+        public const int tileWidth = 3;
+        public const int tileHeight = 3;
         
         bool isConnected = false;
         private RemoteClient client;

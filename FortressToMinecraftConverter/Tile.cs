@@ -1,5 +1,6 @@
 ﻿using RemoteFortressReader;
 using System.Windows.Media;
+using Substrate;
 
 namespace FortressToMinecraftConverter
 {
@@ -13,7 +14,6 @@ namespace FortressToMinecraftConverter
         {
             get
             {
-
                 Color color = Color.FromRgb(128, 128, 128);
                 if (MaterialDefinition != null && MaterialDefinition.state_color != null)
                     color = Color.FromRgb(
@@ -139,6 +139,11 @@ namespace FortressToMinecraftConverter
             color *= number;
             color.A = alpha;
             return color;
+        }
+
+        public AlphaBlock GetBlockMaterial(int x, int y, int z)
+        {
+            return new AlphaBlock(1);
         }
     }
 }

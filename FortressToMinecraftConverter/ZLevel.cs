@@ -45,13 +45,94 @@ namespace FortressToMinecraftConverter
         {
             int dfX = x / 3;
             int dfY = z / 3;
-            var tile = this[dfX, dfY];
+            int localX = x % MapReader.tileWidth;
+            int localY = y % MapReader.tileHeight;
+            int localZ = z % MapReader.tileWidth;
+            var tile = tiles[dfX, dfY];
+
+            Tile xPlus, xMinus, zPlus, zMinus;
+
+            if (dfX > 0)
+                xMinus = tiles[dfX - 1, dfY];
+            else
+                xMinus = tile;
+
+            if (dfX < Width - 1)
+                xPlus = tiles[dfX + 1, dfY];
+            else
+                xPlus = tile;
+
+            if (dfY > 0)
+                zMinus = tiles[dfX, dfY - 1];
+            else
+                zMinus = tile;
+
+            if (dfY < Height - 1)
+                zPlus = tiles[dfX, dfY + 1];
+            else
+                zPlus = tile;
+
             if (tile == null)
                 return new AlphaBlock(0);
-            if (y == 0 && tile.BottomSolid)
-                return new AlphaBlock(1);
-            if (y > 0 && tile.TopSolid)
-                return new AlphaBlock(1);
+
+            switch (tile.TileType.shape)
+            {
+                case RemoteFortressReader.TiletypeShape.NO_SHAPE:
+                    break;
+                case RemoteFortressReader.TiletypeShape.EMPTY:
+                    break;
+                case RemoteFortressReader.TiletypeShape.FLOOR:
+                    break;
+                case RemoteFortressReader.TiletypeShape.BOULDER:
+                    break;
+                case RemoteFortressReader.TiletypeShape.PEBBLES:
+                    break;
+                case RemoteFortressReader.TiletypeShape.WALL:
+                    break;
+                case RemoteFortressReader.TiletypeShape.FORTIFICATION:
+                    if (localY == 0)
+                        return tile.GetBlockMaterial(x, y, z);
+                    if (localX == 1)
+                        return new AlphaBlock(0);
+                    if (localZ == 1)
+                        return new AlphaBlock(0);
+                    return tile.GetBlockMaterial(x, y, z);
+                case RemoteFortressReader.TiletypeShape.STAIR_UP:
+                    break;
+                case RemoteFortressReader.TiletypeShape.STAIR_DOWN:
+                    break;
+                case RemoteFortressReader.TiletypeShape.STAIR_UPDOWN:
+                    break;
+                case RemoteFortressReader.TiletypeShape.RAMP:
+                    break;
+                case RemoteFortressReader.TiletypeShape.RAMP_TOP:
+                    break;
+                case RemoteFortressReader.TiletypeShape.BROOK_BED:
+                    break;
+                case RemoteFortressReader.TiletypeShape.BROOK_TOP:
+                    break;
+                case RemoteFortressReader.TiletypeShape.TREE_SHAPE:
+                    break;
+                case RemoteFortressReader.TiletypeShape.SAPLING:
+                    break;
+                case RemoteFortressReader.TiletypeShape.SHRUB:
+                    break;
+                case RemoteFortressReader.TiletypeShape.ENDLESS_PIT:
+                    break;
+                case RemoteFortressReader.TiletypeShape.BRANCH:
+                    break;
+                case RemoteFortressReader.TiletypeShape.TRUNK_BRANCH:
+                    break;
+                case RemoteFortressReader.TiletypeShape.TWIG:
+                    break;
+                default:
+                    break;
+            }
+
+            if (localY == 0 && tile.BottomSolid)
+                return tile.GetBlockMaterial(x, y, z);
+            if (localY > 0 && tile.TopSolid)
+                return tile.GetBlockMaterial(x, y, z);
             return new AlphaBlock(0);
         }
 
