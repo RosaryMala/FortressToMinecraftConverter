@@ -36,11 +36,11 @@ namespace FortressToMinecraftConverter
                 return false;
             }
 
-            mapInfoCall = RemoteFunction<EmptyMessage, MapInfo>.CreateAndBind(client, "GetMapInfo", "RemoteFortressReader");
-            tileTypeListCall = RemoteFunction<EmptyMessage, TiletypeList>.CreateAndBind(client, "GetTiletypeList", "RemoteFortressReader");
-            mapReadCall = RemoteFunction<BlockRequest, BlockList>.CreateAndBind(client, "GetBlockList", "RemoteFortressReader");
-            mapResetCall = RemoteFunction<EmptyMessage>.CreateAndBind(client, "ResetMapHashes", "RemoteFortressReader");
-            materialListCall = RemoteFunction<EmptyMessage, MaterialList>.CreateAndBind(client, "GetMaterialList", "RemoteFortressReader");
+            mapInfoCall = new RemoteFunction<EmptyMessage, MapInfo>(client, "GetMapInfo", "RemoteFortressReader");
+            tileTypeListCall = new RemoteFunction<EmptyMessage, TiletypeList>(client, "GetTiletypeList", "RemoteFortressReader");
+            mapReadCall = new RemoteFunction<BlockRequest, BlockList>(client, "GetBlockList", "RemoteFortressReader");
+            mapResetCall = new RemoteFunction<EmptyMessage>(client, "ResetMapHashes", "RemoteFortressReader");
+            materialListCall = new RemoteFunction<EmptyMessage, MaterialList>(client, "GetMaterialList", "RemoteFortressReader");
             return true;
             
         }
